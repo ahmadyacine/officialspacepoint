@@ -370,4 +370,42 @@ document.addEventListener('DOMContentLoaded', () => {
   newsletterClose?.addEventListener('click', closeNewsletterPopup);
   newsletterOverlay?.addEventListener('click', closeNewsletterPopup);
 
+  /* ── Video Popup ────────────────────────────────────────── */
+  const watchBtn = document.getElementById('watchJourneyBtn');
+  const videoPopup = document.getElementById('videoPopup');
+  const videoOverlay = document.getElementById('videoOverlay');
+  const videoCloseBtn = document.getElementById('videoCloseBtn');
+  const youtubePlayer = document.getElementById('youtubePlayer');
+  const videoUrl = "https://www.youtube-nocookie.com/embed/51-gNYZkTYQ?autoplay=1";
+
+  function openVideo() {
+    if (!youtubePlayer) return;
+    youtubePlayer.src = videoUrl;
+    videoPopup.classList.remove('pointer-events-none', 'opacity-0');
+    videoPopup.classList.add('opacity-100');
+    document.getElementById('videoModalContent').classList.remove('scale-95');
+    document.getElementById('videoModalContent').classList.add('scale-100');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideo() {
+    if (!videoPopup) return;
+    videoPopup.classList.add('pointer-events-none', 'opacity-0');
+    videoPopup.classList.remove('opacity-100');
+    document.getElementById('videoModalContent').classList.add('scale-95');
+    document.getElementById('videoModalContent').classList.remove('scale-100');
+    document.body.style.overflow = '';
+    // Stop video playback
+    setTimeout(() => {
+      if (youtubePlayer) youtubePlayer.src = "";
+    }, 500);
+  }
+
+  watchBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openVideo();
+  });
+  videoOverlay?.addEventListener('click', closeVideo);
+  videoCloseBtn?.addEventListener('click', closeVideo);
+
 });
