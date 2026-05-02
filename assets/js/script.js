@@ -342,13 +342,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const newsletterClose = document.getElementById('newsletterClose');
   const newsletterOverlay = document.getElementById('newsletterOverlay');
   const gallerySection = document.getElementById('gallery');
-  let popupShown = false;
+  let popupShown = sessionStorage.getItem('newsletterShown') === 'true';
 
   if (gallerySection && newsletterPopup) {
     const popupObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !popupShown) {
           popupShown = true; // ensure it only pops up once
+          sessionStorage.setItem('newsletterShown', 'true');
           // Slight delay so they can see the gallery moving before the popup appears
           setTimeout(() => {
             newsletterPopup.classList.add('popup-visible');
