@@ -408,4 +408,147 @@ document.addEventListener('DOMContentLoaded', () => {
   videoOverlay?.addEventListener('click', closeVideo);
   videoCloseBtn?.addEventListener('click', closeVideo);
 
+  /* ── Product Modal ─────────────────────────────────────── */
+  const productCards = document.querySelectorAll('.product-card');
+  const productPopup = document.getElementById('productPopup');
+  const productOverlay = document.getElementById('productOverlay');
+  const productModalContent = document.getElementById('productModalContent');
+  const productCloseBtn = document.getElementById('productCloseBtn');
+  
+  const popupProductImage = document.getElementById('popupProductImage');
+  const popupProductTitle = document.getElementById('popupProductTitle');
+  const popupProductDesc = document.getElementById('popupProductDesc');
+  const popupProductInput = document.getElementById('popupProductInput');
+  const productWaitlistForm = document.getElementById('productWaitlistForm');
+
+  const openProductModal = (card) => {
+    if (!productPopup) return;
+    
+    // Set data
+    const title = card.getAttribute('data-title');
+    const desc = card.getAttribute('data-desc');
+    const image = card.getAttribute('data-image');
+    
+    popupProductTitle.textContent = title;
+    popupProductDesc.textContent = desc;
+    popupProductInput.value = title; // For the hidden input
+    
+    if (image) {
+      popupProductImage.src = image;
+      popupProductImage.style.display = 'block';
+    } else {
+      popupProductImage.style.display = 'none';
+    }
+    
+    // Reset form UI if previously submitted
+    if (productWaitlistForm) {
+      const btn = productWaitlistForm.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = 'Register';
+        btn.className = 'btn-primary w-full text-white font-semibold px-4 py-3 rounded-xl text-sm flex items-center justify-center gap-2 mt-1';
+      }
+      productWaitlistForm.reset();
+    }
+
+    // Show modal
+    productPopup.classList.remove('pointer-events-none');
+    productPopup.classList.remove('opacity-0');
+    setTimeout(() => {
+      productModalContent.classList.remove('scale-95', 'translate-y-8');
+    }, 50);
+  };
+
+  const closeProductModal = () => {
+    if (!productPopup) return;
+    productModalContent.classList.add('scale-95', 'translate-y-8');
+    setTimeout(() => {
+      productPopup.classList.add('opacity-0');
+      productPopup.classList.add('pointer-events-none');
+    }, 300);
+  };
+
+  productCards.forEach(card => {
+    card.addEventListener('click', () => openProductModal(card));
+  });
+
+  productOverlay?.addEventListener('click', closeProductModal);
+  productCloseBtn?.addEventListener('click', closeProductModal);
+
+  /* ── Google Form Submission Handling ────────────────────── */
+  const handleFormSubmit = async (formId) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Update UI to show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Processing...
+      `;
+
+      try {
+        const formData = new FormData(form);
+        if (form.action && !form.action.endsWith('#')) {
+          await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+        } else {
+          // Simulate network request for placeholder forms
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+
+        // Customize success message
+        let successMessage = "Welcome Explorer!";
+        if (formId === 'productWaitlistForm') {
+          successMessage = "You're on the list!";
+        }
+
+        // Show Success UI
+        submitBtn.innerHTML = `
+          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          ${successMessage}
+        `;
+        submitBtn.classList.remove('btn-primary');
+        submitBtn.classList.add('bg-green-500/20', 'border', 'border-green-500/50', 'text-green-400');
+
+        // Reset form
+        form.reset();
+
+        // Specific actions for popups
+        if (formId === 'newsletterForm') {
+          setTimeout(() => {
+            closeNewsletterPopup();
+          }, 2000);
+        } else if (formId === 'productWaitlistForm') {
+          setTimeout(() => {
+            closeProductModal();
+          }, 2000);
+        }
+
+      } catch (error) {
+        console.error('Submission error:', error);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+        alert('There was an error submitting the form. Please try again.');
+      }
+    });
+  };
+
+  handleFormSubmit('communityForm');
+  handleFormSubmit('newsletterForm');
+  handleFormSubmit('productWaitlistForm');
+
 });

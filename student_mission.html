@@ -71,7 +71,7 @@
                   Journey</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="team.html">Team</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="alumni.html">Alumni</a>
-<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="index.html#store">Shop</a>
+<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="shop.html">Shop</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="student_mission.html">Student
                   Missions</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="#">Events</a>
@@ -103,7 +103,9 @@
 <div class="flex flex-col h-full px-6 pt-6 pb-10 overflow-y-auto">
 <!-- Header row -->
 <div class="flex items-center justify-between mb-10">
-<img alt="SpacePoint" class="h-8 w-auto" src="assets/img/SpacePoint logo.png"/>
+<a href="index.html" class="flex items-center">
+  <img alt="SpacePoint" class="h-8 w-auto" src="assets/img/SpacePoint logo.png"/>
+</a>
 <button aria-label="Close menu" class="p-2 focus:outline-none" id="mobileMenuClose">
 <svg class="w-6 h-6 text-space-light" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -129,7 +131,7 @@
             Journey</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="team.html">Team</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="alumni.html">Alumni</a>
-<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="index.html#store">Shop</a>
+<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="shop.html">Shop</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="student_mission.html">Student
             Missions</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="#">Events</a>
@@ -260,7 +262,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 <!-- Brand & About -->
 <div>
-<a class="inline-block mb-6" href="#">
+<a class="inline-block mb-6" href="index.html">
 <img alt="SpacePoint Logo" class="h-10 w-auto" src="assets/img/SpacePoint logo.png"/>
 </a>
 <p class="text-space-light text-sm leading-relaxed mb-6">
@@ -369,15 +371,15 @@
         Subscribe to our newsletter to get the latest updates on our next space events, satellite workshops, and
         exclusive explorer resources.
       </p>
-<form class="flex flex-col w-full gap-4" onsubmit="event.preventDefault(); document.getElementById('newsletterClose').click();">
-<input class="w-full bg-space-dark/80 border border-space-purple/40 text-white px-5 py-3.5 rounded-xl focus:outline-none focus:border-space-accent transition-colors placeholder-space-light/50 text-center sm:text-left" placeholder="Enter your email address" required="" type="email"/>
-<button class="btn-primary w-full text-white font-semibold px-6 py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 group" type="submit">
+      <form id="newsletterForm" class="flex flex-col w-full gap-4" action="https://docs.google.com/forms/d/e/1FAIpQLSdKr8KwlG9mPPj29M3podWH7IRXE_fEpv0K59i9FxTlplOz0A/formResponse" method="POST">
+        <input name="entry.1600678404" class="w-full bg-space-dark/80 border border-space-purple/40 text-white px-5 py-3.5 rounded-xl focus:outline-none focus:border-space-accent transition-colors placeholder-space-light/50 text-center sm:text-left" placeholder="Enter your email address" required="" type="email"/>
+        <button class="btn-primary w-full text-white font-semibold px-6 py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 group" type="submit">
           Subscribe Now
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</form>
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </form>
 <p class="text-space-light/40 text-xs mt-6">We respect your privacy. No spam, just space.</p>
 </div>
 </div>
