@@ -427,17 +427,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set data
     const title = card.getAttribute('data-title');
     const desc = card.getAttribute('data-desc');
-    const image = card.getAttribute('data-image');
+    const mainImage = card.getAttribute('data-image');
+    const imagesStr = card.getAttribute('data-images');
+    const images = imagesStr ? imagesStr.split(',') : (mainImage ? [mainImage] : []);
     
     popupProductTitle.textContent = title;
     popupProductDesc.textContent = desc;
-    popupProductInput.value = title; // For the hidden input
+    popupProductInput.value = title;
     
-    if (image) {
-      popupProductImage.src = image;
+    // Set main image
+    if (mainImage) {
+      popupProductImage.src = mainImage;
       popupProductImage.style.display = 'block';
     } else {
       popupProductImage.style.display = 'none';
+    }
+
+    // Handle thumbnails
+    const thumbsContainer = document.getElementById('popupProductThumbs');
+    if (thumbsContainer) {
+      thumbsContainer.innerHTML = '';
+      if (images.length > 1) {
+        images.forEach((imgSrc, index) => {
+          const thumb = document.createElement('div');
+          thumb.className = `w-12 h-12 rounded-lg overflow-hidden border-2 cursor-pointer transition-all ${index === 0 ? 'border-space-accent' : 'border-transparent opacity-60 hover:opacity-100'}`;
+          thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-contain p-1" alt="Thumbnail ${index + 1}">`;
+          
+          thumb.addEventListener('click', () => {
+            popupProductImage.src = imgSrc;
+            // Update active state
+            thumbsContainer.querySelectorAll('div').forEach(t => {
+              t.classList.remove('border-space-accent');
+              t.classList.add('border-transparent', 'opacity-60');
+            });
+            thumb.classList.add('border-space-accent');
+            thumb.classList.remove('border-transparent', 'opacity-60');
+          });
+          
+          thumbsContainer.appendChild(thumb);
+        });
+        thumbsContainer.style.display = 'flex';
+      } else {
+        thumbsContainer.style.display = 'none';
+      }
     }
     
     // Reset form UI if previously submitted
