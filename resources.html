@@ -457,8 +457,8 @@
 <div>
 <h4 class="font-semibold text-white tracking-widest uppercase text-sm mb-6">Legal</h4>
 <ul class="space-y-3 text-sm text-space-light">
-<li><a class="hover:text-space-accent transition-colors" href="#">Terms of Service</a></li>
-<li><a class="hover:text-space-accent transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-space-accent transition-colors cursor-pointer" id="footerTerms">Terms of Service</a></li>
+<li><a class="hover:text-space-accent transition-colors cursor-pointer" id="footerPrivacy">Privacy Policy</a></li>
 <li><a class="hover:text-space-accent transition-colors" href="#">Shipping Policy</a></li>
 </ul>
 </div>
@@ -511,6 +511,379 @@
 <div class="absolute bottom-2 w-2.5 h-3.5 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse origin-top" id="rocketFlame">
 </div>
 </div>
+<!-- ════════════════ LEGAL MODALS ════════════════ -->
+  <!-- Terms Modal -->
+  <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="termsModal">
+    <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="termsOverlay"></div>
+    <div class="relative glass border border-space-purple/40 rounded-3xl w-[95%] max-w-4xl max-h-[85vh] overflow-hidden transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col shadow-2xl" id="termsContent">
+      <div class="p-6 border-b border-space-purple/20 flex items-center justify-between bg-space-dark/50">
+        <h3 class="font-outfit font-extrabold text-2xl text-white">Terms & <span class="text-space-accent">Conditions</span></h3>
+        <button class="p-2 text-space-light hover:text-white transition-colors focus:outline-none" id="termsClose">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-12 overflow-y-auto text-space-light/80 text-sm leading-relaxed font-inter custom-scrollbar">
+        <div class="space-y-8">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-space-purple/10 border border-space-purple/20">
+            <div class="w-12 h-12 rounded-xl bg-space-accent/20 flex items-center justify-center text-space-accent">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-space-accent font-bold">Last Updated</p>
+              <p class="text-white font-semibold">April 1, 2026</p>
+            </div>
+          </div>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">1.</span> Introduction
+            </h4>
+            <p>Welcome to SpacePoint. By accessing our website, programs, or services—including SatKit, workshops, and training, you agree to these Terms & Conditions.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">2.</span> Eligibility
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Our programs are designed for students, educators, and institutions.</li>
+              <li>Participants under 18 require parental or institutional consent.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">3.</span> Our Services
+            </h4>
+            <p class="mb-4">SpacePoint provides:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Satellite development programs (online, onsite, hybrid)</li>
+              <li>Hands-on kits (e.g., SatKit)</li>
+              <li>Workshops, camps, and training sessions</li>
+              <li>Instructor training and certifications</li>
+            </ul>
+            <p class="mt-4 italic">We may update or modify our services at any time.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">4.</span> Program Delivery
+            </h4>
+            <p class="mb-4">SpacePoint programs may be delivered in one of the following formats:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Online:</strong> Virtual sessions</li>
+              <li><strong>Onsite:</strong> In-person at schools, events, or partner locations</li>
+              <li><strong>Hybrid:</strong> Combination of both</li>
+            </ul>
+            <p class="mt-4">The delivery mode will be communicated before the program starts.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">5.</span> Online Participation
+            </h4>
+            <p class="mb-4">Participants are responsible for having:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>A stable internet connection</li>
+              <li>A suitable device (laptop or tablet)</li>
+            </ul>
+            <p class="mt-4 mb-4 font-semibold text-white">SpacePoint is not responsible for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Connectivity issues</li>
+              <li>Device malfunctions</li>
+              <li>Third-party platform disruptions</li>
+            </ul>
+            <p class="mt-4 italic">Sessions may be recorded for quality, training, or educational purposes.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">6.</span> Onsite Participation
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Participants must follow all safety instructions and use equipment responsibly.</li>
+              <li>Any misuse or negligence resulting in damage may result in charges.</li>
+              <li><strong>For institutional programs:</strong> The hosting organization is responsible for general supervision outside session delivery.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">7.</span> Registration & Accounts
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Users must provide accurate and complete information.</li>
+              <li>SpacePoint may suspend access for incorrect or misleading data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">8.</span> Payments
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Fees must be paid in advance unless otherwise agreed.</li>
+              <li>Pricing may vary depending on program type or partner agreements.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">9.</span> Refunds & Cancellations
+            </h4>
+            <p class="mb-4 font-semibold text-white">Refunds are only provided if:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>A program is canceled by SpacePoint</li>
+            </ul>
+            <p class="mb-4 font-semibold text-white">Refunds are not provided for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Missed sessions</li>
+              <li>Partial attendance</li>
+              <li>Withdrawal after program start</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">10.</span> Attendance & Scheduling
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Participants are expected to attend all sessions.</li>
+              <li>Missed sessions are not guaranteed to be rescheduled.</li>
+              <li>SpacePoint may reschedule sessions or assign alternative instructors if needed.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">11.</span> Intellectual Property
+            </h4>
+            <p class="mb-4">All materials, including SatKit, curriculum, content and documentation, are owned by SpacePoint and protected by law.</p>
+            <p>They may only be used for personal educational purposes and may not be copied, shared, or resold without permission.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">12.</span> Code of Conduct
+            </h4>
+            <p class="mb-4">Participants must respect instructors and peers, follow program guidelines, and use tools and equipment responsibly.</p>
+            <p>Violation may result in removal without refund.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">13.</span> Media & Recording
+            </h4>
+            <p class="mb-4">By participating in our programs, photos, videos, or recordings may be captured and used for educational or promotional purposes.</p>
+            <p>For minors, consent is assumed through parents, guardians, or institutions unless withdrawn in writing.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">14.</span> Limitation of Liability
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>SpacePoint is not liable for indirect or incidental damages.</li>
+              <li>Liability is limited to the amount paid for the service.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">15.</span> Governing Law
+            </h4>
+            <p>These Terms are governed by the laws of the United Arab Emirates.</p>
+          </section>
+        </div>
+      </div>
+      <div class="p-6 border-t border-space-purple/20 bg-space-dark/50 flex justify-end">
+        <button class="btn-primary text-white text-sm font-semibold px-8 py-2.5 rounded-full" id="termsAccept">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Modal -->
+  <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="privacyModal">
+    <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="privacyOverlay"></div>
+    <div class="relative glass border border-space-purple/40 rounded-3xl w-[95%] max-w-4xl max-h-[85vh] overflow-hidden transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col shadow-2xl" id="privacyContent">
+      <div class="p-6 border-b border-space-purple/20 flex items-center justify-between bg-space-dark/50">
+        <h3 class="font-outfit font-extrabold text-2xl text-white">Privacy <span class="text-space-accent">Policy</span></h3>
+        <button class="p-2 text-space-light hover:text-white transition-colors focus:outline-none" id="privacyClose">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-12 overflow-y-auto text-space-light/80 text-sm leading-relaxed font-inter custom-scrollbar">
+        <div class="space-y-8">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-space-purple/10 border border-space-purple/20">
+            <div class="w-12 h-12 rounded-xl bg-space-accent/20 flex items-center justify-center text-space-accent">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-space-accent font-bold">SpacePoint FZC</p>
+              <p class="text-white font-semibold text-lg">Privacy Policy</p>
+            </div>
+          </div>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">1.</span> Introduction
+            </h4>
+            <p>At SpacePoint, we respect your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">2.</span> Information We Collect
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <p class="text-white font-semibold mb-2">a) Personal Information</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Name, email, phone number</li>
+                  <li>Age or educational level</li>
+                  <li>School or organization name</li>
+                  <li>Payment details (processed securely via third parties)</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-2">b) Program Data</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Course participation and performance</li>
+                  <li>Feedback and survey responses</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-2">c) Technical Data</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>IP address</li>
+                  <li>Device and browser type</li>
+                  <li>Website usage data (cookies, analytics)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">3.</span> How We Use Your Information
+            </h4>
+            <p class="mb-4">We use your data to:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Deliver programs and services</li>
+              <li>Communicate updates and schedules</li>
+              <li>Improve our curriculum and offerings</li>
+              <li>Provide certificates and reports</li>
+              <li>Ensure safety and program quality</li>
+            </ul>
+            <p class="font-semibold text-white mb-2">We may also use anonymized data for:</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Impact reporting</li>
+              <li>Research and program improvement</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">4.</span> Sharing of Information
+            </h4>
+            <p class="mb-4">We may share data with:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Partner institutions (schools, universities)</li>
+              <li>Program sponsors (when applicable)</li>
+              <li>Service providers (payment processors, platforms)</li>
+            </ul>
+            <p class="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 font-bold text-center uppercase tracking-widest text-xs">
+              We do NOT sell your personal data.
+            </p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">5.</span> Data Protection
+            </h4>
+            <p class="mb-4">We implement:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Secure data storage systems</li>
+              <li>Access control measures</li>
+              <li>Encryption where applicable</li>
+            </ul>
+            <p class="mt-4 italic">However, no system is 100% secure.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">6.</span> Data Retention
+            </h4>
+            <p class="mb-4">We retain data only as long as necessary for program delivery and legal or reporting requirements.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">7.</span> Program Delivery & Data Use
+            </h4>
+            <p class="mb-4">Depending on the program format (online, onsite, or hybrid), we may collect and process:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Session recordings (online programs)</li>
+              <li>Participation and attendance data</li>
+              <li>Photos/videos during onsite activities</li>
+            </ul>
+            <p class="font-semibold text-white mb-2">This data is used strictly for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Program delivery and improvement</li>
+              <li>Certification and reporting</li>
+              <li>Marketing (where applicable)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">8.</span> Children’s Privacy
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>For users under 18: Data is collected with parental or institutional consent.</li>
+              <li>We take extra care in handling minors’ data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">9.</span> Your Rights
+            </h4>
+            <p class="mb-4 text-white font-semibold">You have the right to:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Access your data</li>
+              <li>Request corrections</li>
+              <li>Request deletion (where applicable)</li>
+              <li>Withdraw consent</li>
+            </ul>
+            <p>To exercise these rights, contact us.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">10.</span> Cookies
+            </h4>
+            <p class="mb-4">We use cookies to improve user experience and analyze website performance. You can disable cookies in your browser settings.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">11.</span> Updates to This Policy
+            </h4>
+            <p>We may update this policy periodically. Changes will be reflected on this page.</p>
+          </section>
+        </div>
+      </div>
+      <div class="p-6 border-t border-space-purple/20 bg-space-dark/50 flex justify-end">
+        <button class="btn-primary text-white text-sm font-semibold px-8 py-2.5 rounded-full" id="privacyAccept">Close</button>
+      </div>
+    </div>
+  </div>
+
 <!-- ════════════════ NEWSLETTER POPUP ════════════════ -->
 <div class="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="newsletterPopup">
 <!-- Overlay -->

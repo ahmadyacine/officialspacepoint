@@ -579,8 +579,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  handleFormSubmit('communityForm');
-  handleFormSubmit('newsletterForm');
   handleFormSubmit('productWaitlistForm');
+  
+  /* ── Legal Modals (Terms & Privacy) ─────────────────────── */
+  const termsModal = document.getElementById('termsModal');
+  const privacyModal = document.getElementById('privacyModal');
+  const footerTerms = document.getElementById('footerTerms');
+  const footerPrivacy = document.getElementById('footerPrivacy');
+  
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('pointer-events-none');
+    modal.classList.add('opacity-100');
+    const content = modal.querySelector('.glass');
+    if (content) {
+      content.classList.remove('scale-95', 'translate-y-8');
+      content.classList.add('scale-100', 'translate-y-0');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    const content = modal.querySelector('.glass');
+    if (content) {
+      content.classList.add('scale-95', 'translate-y-8');
+      content.classList.remove('scale-100', 'translate-y-0');
+    }
+    setTimeout(() => {
+      modal.classList.remove('opacity-100');
+      modal.classList.add('pointer-events-none');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  // Terms Triggers
+  footerTerms?.addEventListener('click', () => openModal(termsModal));
+  document.getElementById('termsClose')?.addEventListener('click', () => closeModal(termsModal));
+  document.getElementById('termsAccept')?.addEventListener('click', () => closeModal(termsModal));
+  document.getElementById('termsOverlay')?.addEventListener('click', () => closeModal(termsModal));
+
+  // Privacy Triggers
+  footerPrivacy?.addEventListener('click', () => openModal(privacyModal));
+  document.getElementById('privacyClose')?.addEventListener('click', () => closeModal(privacyModal));
+  document.getElementById('privacyAccept')?.addEventListener('click', () => closeModal(privacyModal));
+  document.getElementById('privacyOverlay')?.addEventListener('click', () => closeModal(privacyModal));
 
 });
