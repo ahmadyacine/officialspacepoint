@@ -54,7 +54,7 @@
 <!-- Desktop nav -->
 <nav class="hidden lg:flex items-center gap-7 font-inter text-sm font-medium text-space-light">
 <a class="nav-link hover:text-white transition-colors" href="index.html">Home</a>
-<a class="nav-link hover:text-white transition-colors" href="index.html#about">About</a>
+<a class="nav-link hover:text-white transition-colors" href="about.html">About</a>
 <a class="nav-link hover:text-white transition-colors" href="index.html#programs">Programs</a>
 <!-- Discover dropdown -->
 <div class="relative">
@@ -64,13 +64,13 @@
 <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
-<div class="absolute top-8 left-1/2 -translate-x-1/2 w-56 opacity-0 pointer-events-none translate-y-2 z-50" id="discoverMenu">
-<div class="glass rounded-xl p-3 mt-2">
+<div class="absolute top-8 left-1/2 -translate-x-1/2 w-56 opacity-0 pointer-events-none translate-y-2 z-50 transition-all duration-300" id="discoverMenu">
+<div class="glass rounded-xl p-3 mt-2 border border-space-purple/20 shadow-2xl">
 <div class="grid grid-cols-2 gap-1 text-xs text-space-light">
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="journey.html">Our
                   Journey</a>
-<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="index.html">Team</a>
-<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="index.html">Alumni</a>
+<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="team.html">Team</a>
+<a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="alumni.html">Alumni</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="shop.html">Shop</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="student_mission.html">Student Missions</a>
 <a class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors" href="media_coverage.html">Media Coverage</a>
@@ -99,7 +99,7 @@
 </div>
 </header>
 <!-- ════════════════ MOBILE MENU ════════════════ -->
-<div class="fixed inset-0 z-[100] translate-x-full" id="mobileMenu" style="background:linear-gradient(160deg,#05030A 60%,#231134);">
+<div class="fixed inset-0 z-[100] translate-x-full transition-transform duration-500 ease-in-out" id="mobileMenu" style="background:linear-gradient(160deg,#05030A 60%,#231134);">
 <div class="flex flex-col h-full px-6 pt-6 pb-10 overflow-y-auto">
 <!-- Header row -->
 <div class="flex items-center justify-between mb-10">
@@ -115,22 +115,22 @@
 <!-- Main links -->
 <nav class="flex flex-col gap-1 font-outfit text-lg font-semibold">
 <a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-white" href="index.html">Home</a>
-<a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white" href="index.html#about">About</a>
+<a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white" href="about.html">About</a>
 <a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white" href="index.html#programs">Programs</a>
 <a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white" href="index.html#blog">Blog</a>
 <a class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white" href="index.html#contact">Contact</a>
 <!-- Discover accordion -->
 <button class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white w-full text-left font-outfit text-lg font-semibold" id="mobileDiscoverBtn">
           Discover
-          <svg class="w-4 h-4" fill="none" id="mobileDiscoverIcon" stroke="currentColor" viewbox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-300" fill="none" id="mobileDiscoverIcon" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
 <div class="hidden pl-4 flex flex-col gap-1" id="mobileDiscoverList">
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="journey.html">Our
             Journey</a>
-<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="index.html">Team</a>
-<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="index.html">Alumni</a>
+<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="team.html">Team</a>
+<a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="alumni.html">Alumni</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="shop.html">Shop</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="student_mission.html">Student Missions</a>
 <a class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg" href="media_coverage.html">Media Coverage</a>
