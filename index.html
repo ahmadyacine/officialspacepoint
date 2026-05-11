@@ -1061,6 +1061,45 @@
 </div>
 </div>
 </section>
+
+<!-- ════════════════ GLOBAL REACH (MAP) ════════════════ -->
+<section id="global-reach" class="relative z-10 pt-24 pb-32 overflow-hidden bg-space-dark border-t border-space-purple/20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-20">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-purple/20 border border-space-purple/30 text-space-accent text-xs font-semibold tracking-wide uppercase mb-4">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-space-accent"></span>
+      </span>
+      Global Reach
+    </div>
+    <h2 class="font-outfit font-extrabold text-4xl md:text-5xl text-white mb-6">
+      SpacePoint Reached <span class="text-transparent bg-clip-text bg-gradient-to-r from-space-accent to-purple-400">To</span>
+    </h2>
+    <p class="text-space-light/80 text-lg max-w-2xl mx-auto leading-relaxed mb-12">
+      Empowering students and future space innovators across the globe.
+    </p>
+
+    <!-- Map Container -->
+    <div class="relative w-full h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border border-space-purple/30 shadow-[0_0_50px_rgba(167,125,255,0.15)] flex items-center justify-center bg-[#080410]">
+      <div id="globeViz" class="absolute inset-0 cursor-move"></div>
+      
+      <!-- Overlay list of countries -->
+      <div class="absolute bottom-6 left-6 right-6 flex flex-wrap justify-center gap-3 z-10 pointer-events-none">
+        <button onclick="flyToGlobe(23.4241, 53.8478)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-bold text-white border-space-accent/60 bg-space-purple/20 shadow-[0_0_20px_rgba(167,125,255,0.4)] hover:scale-105 hover:bg-space-purple/40 transition-all cursor-pointer">🇦🇪 UAE (HQ)</button>
+        <button onclick="flyToGlobe(26.8206, 30.8025)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇪🇬 Egypt</button>
+        <button onclick="flyToGlobe(9.0820, 8.6753)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇳🇬 Nigeria</button>
+        <button onclick="flyToGlobe(23.8859, 45.0792)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇸🇦 KSA</button>
+        <button onclick="flyToGlobe(21.4735, 55.9754)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇴🇲 Oman</button>
+        <button onclick="flyToGlobe(35.9375, 14.3978)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇲🇹 Malta</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Subtle background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-space-accent/10 blur-[120px] pointer-events-none"></div>
+</section>
+
+
 <!-- ════════════════ FOOTER & CONTACT ════════════════ -->
   <footer class="relative z-10 bg-[#0B0510] pt-20 pb-8 border-t border-space-purple/20 overflow-hidden" id="contact">
     <!-- Subtle background glow -->
@@ -1619,5 +1658,88 @@
     (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/hsw1zj8e';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
   </script>
 <script src="assets/js/script.js"></script>
+
+<script src="https://unpkg.com/globe.gl"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const locations = [
+      { lat: 23.4241, lng: 53.8478, name: 'UAE (HQ)', size: 1.5, color: '#A77DFF' },
+      { lat: 26.8206, lng: 30.8025, name: 'Egypt', size: 1.0, color: '#FFFFFF' },
+      { lat: 9.0820, lng: 8.6753, name: 'Nigeria', size: 1.0, color: '#FFFFFF' },
+      { lat: 23.8859, lng: 45.0792, name: 'KSA', size: 1.0, color: '#FFFFFF' },
+      { lat: 21.4735, lng: 55.9754, name: 'Oman', size: 1.0, color: '#FFFFFF' },
+      { lat: 35.9375, lng: 14.3978, name: 'Malta', size: 1.0, color: '#FFFFFF' }
+    ];
+
+    const uae = locations[0];
+    const arcsData = locations.slice(1).map(loc => ({
+      name: loc.name,
+      startLat: uae.lat,
+      startLng: uae.lng,
+      endLat: loc.lat,
+      endLng: loc.lng,
+      color: ['#A77DFF', '#FFFFFF']
+    }));
+
+    const globeContainer = document.getElementById('globeViz');
+    if(globeContainer) {
+      // Add a slight delay to ensure container dimensions are set
+      setTimeout(() => {
+        const myGlobe = Globe()(globeContainer)
+          .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
+          .backgroundColor('#080410')
+          .pointsData(locations)
+          .pointAltitude(0.05)
+          .pointColor('color')
+          .pointRadius('size')
+          .pointsMerge(false)
+          .pointResolution(32)
+          .pointLabel('name')
+          .arcsData(arcsData)
+          .arcStartLat('startLat')
+          .arcStartLng('startLng')
+          .arcEndLat('endLat')
+          .arcEndLng('endLng')
+          .arcColor('color')
+          .arcAltitude(d => d.name === 'Oman' ? 0.08 : d.name === 'KSA' ? 0.12 : 0.25)
+          .arcDashLength(0.4)
+          .arcDashGap(2)
+          .arcDashInitialGap(0)
+          .arcDashAnimateTime(1200)
+          .arcStroke(0.3);
+        
+        // Setup controls
+        myGlobe.controls().autoRotate = true;
+        myGlobe.controls().autoRotateSpeed = 1.0;
+        myGlobe.controls().enableZoom = false;
+
+        // Adjust camera to look at MENA/Africa region
+        myGlobe.pointOfView({ lat: 20, lng: 40, altitude: 2 }, 1000);
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+          myGlobe.width(globeContainer.clientWidth);
+          myGlobe.height(globeContainer.clientHeight);
+        });
+        
+        // Set initial size
+        myGlobe.width(globeContainer.clientWidth);
+        myGlobe.height(globeContainer.clientHeight);
+        
+        // Make points glow
+        myGlobe.customLayerData([...Array(1).keys()])
+          .customThreeObject(() => new THREE.AmbientLight(0x404040));
+        
+        // Expose globe and fly function globally
+        window.myGlobe = myGlobe;
+        window.flyToGlobe = function(lat, lng) {
+          window.myGlobe.pointOfView({ lat: lat, lng: lng, altitude: 1.5 }, 1000);
+        };
+      }, 100);
+    }
+  });
+</script>
+
 </body>
+
 </html>
