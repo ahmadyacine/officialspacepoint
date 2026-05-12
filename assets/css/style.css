@@ -289,14 +289,14 @@ textarea {
 /* Flip Card */
 .flip-card {
   perspective: 1000px;
-  height: 520px;
+  height: 580px;
   position: relative;
   z-index: 1;
 }
 
 @media (min-width: 640px) {
   .flip-card {
-    height: 540px;
+    height: 640px;
   }
 }
 

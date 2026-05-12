@@ -167,8 +167,8 @@
     <!-- ================= VIEW: QUICK FLIGHT ================= -->
     <div id="view-quick-flight" class="program-view block animate-fade-in">
       <div class="flex flex-col items-center">
-        <!-- 1. Three Cards (Tabs) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-16">
+        <!-- 1. Four Cards (Tabs) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
           <button class="glass p-6 rounded-2xl border-2 border-space-accent bg-space-purple/20 text-center shadow-[0_0_20px_rgba(167,125,255,0.2)] cursor-default">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2">Quick Flight</h3>
              <p class="text-space-light text-sm">First exposure to space tech</p>
@@ -180,6 +180,10 @@
           <button onclick="switchView('the-mission')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Mission</h3>
              <p class="text-space-light text-sm">From classroom to space mission</p>
+          </button>
+          <button onclick="switchView('the-journey')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Journey</h3>
+             <p class="text-space-light text-sm">Sustainable STEM impact</p>
           </button>
         </div>
 
@@ -254,8 +258,8 @@
     <!-- ================= VIEW: SHALLOW FLIGHT ================= -->
     <div id="view-shallow-flight" class="program-view hidden animate-fade-in">
       <div class="flex flex-col items-center">
-        <!-- 1. Three Cards (Tabs) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-16">
+        <!-- 1. Four Cards (Tabs) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
           <button onclick="switchView('quick-flight')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">Quick Flight</h3>
              <p class="text-space-light text-sm">First exposure to space tech</p>
@@ -267,6 +271,10 @@
           <button onclick="switchView('the-mission')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Mission</h3>
              <p class="text-space-light text-sm">From classroom to space mission</p>
+          </button>
+          <button onclick="switchView('the-journey')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Journey</h3>
+             <p class="text-space-light text-sm">Sustainable STEM impact</p>
           </button>
         </div>
 
@@ -344,8 +352,8 @@
     <!-- ================= VIEW: THE MISSION ================= -->
     <div id="view-the-mission" class="program-view hidden animate-fade-in">
       <div class="flex flex-col items-center">
-        <!-- 1. Three Cards (Tabs) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-16">
+        <!-- 1. Four Cards (Tabs) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
           <button onclick="switchView('quick-flight')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">Quick Flight</h3>
              <p class="text-space-light text-sm">First exposure to space tech</p>
@@ -357,6 +365,10 @@
           <button class="glass p-6 rounded-2xl border-2 border-space-accent bg-space-purple/20 text-center shadow-[0_0_20px_rgba(167,125,255,0.2)] cursor-default">
              <h3 class="font-outfit font-bold text-2xl text-white mb-2">The Mission</h3>
              <p class="text-space-light text-sm">From classroom to space mission</p>
+          </button>
+          <button onclick="switchView('the-journey')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Journey</h3>
+             <p class="text-space-light text-sm">Sustainable STEM impact</p>
           </button>
         </div>
 
@@ -430,6 +442,89 @@
       </div>
     </div>
 
+    <!-- ================= VIEW: THE JOURNEY ================= -->
+    <div id="view-the-journey" class="program-view hidden animate-fade-in">
+      <div class="flex flex-col items-center">
+        <!-- 1. Four Cards (Tabs) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl mb-16">
+          <button onclick="switchView('quick-flight')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">Quick Flight</h3>
+             <p class="text-space-light text-sm">First exposure to space tech</p>
+          </button>
+          <button onclick="switchView('shallow-flight')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">Shallow Flight</h3>
+             <p class="text-space-light text-sm">Turn curiosity into real skills</p>
+          </button>
+          <button onclick="switchView('the-mission')" class="glass p-6 rounded-2xl border border-transparent hover:border-space-purple/50 opacity-60 hover:opacity-100 transition-all text-center cursor-pointer group">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2 group-hover:text-space-accent transition-colors">The Mission</h3>
+             <p class="text-space-light text-sm">From classroom to space mission</p>
+          </button>
+          <button class="glass p-6 rounded-2xl border-2 border-space-accent bg-space-purple/20 text-center shadow-[0_0_20px_rgba(167,125,255,0.2)] cursor-default">
+             <h3 class="font-outfit font-bold text-2xl text-white mb-2">The Journey</h3>
+             <p class="text-space-light text-sm">Sustainable STEM impact</p>
+          </button>
+        </div>
+
+        <!-- 2. Title -->
+        <h2 class="font-outfit font-extrabold text-5xl md:text-6xl text-white mb-8 text-center">The Journey</h2>
+
+        <!-- 3. Details Text -->
+        <div class="w-full max-w-5xl mb-12">
+          <h3 class="text-space-accent font-semibold text-2xl mb-6 text-left">Train Educators and Build a Sustainable Space Education Program</h3>
+          <div class="space-y-4 text-space-light/90 text-lg leading-relaxed mb-10 text-left">
+            <p>The Journey is SpacePoint’s flagship long-term program designed to help schools, universities, and organizations establish a lasting space education ecosystem. Unlike short workshops, this program empowers institutions by training their own instructors to deliver advanced space and satellite education independently.</p>
+            <p>The program begins with 24–30 hours of intensive hands-on training delivered by SpacePoint experts. During this phase, instructors and participants gain practical experience in CubeSat development, satellite subsystems, mission planning, programming, testing, and systems integration.</p>
+            <p>Following the initial training, The Journey continues over six months. During this period, the school or university’s instructors lead the program internally while receiving monthly follow-up sessions, technical support, and guidance from SpacePoint’s expert team. This approach ensures consistent progress, builds internal expertise, and enables institutions to confidently deliver space education year after year.</p>
+            <p>The program follows a structured learning path specifically designed for long-term skill development and deep satellite understanding. To support ongoing innovation, The Journey also includes the setup of a dedicated satellite development laboratory, providing students and educators with a permanent space to build, test, and expand their projects.</p>
+            <p>The Journey is ideal for institutions seeking to create a sustainable STEM initiative, strengthen educator capabilities, and inspire the next generation of space innovators.</p>
+          </div>
+
+          <!-- Learning Outcomes -->
+          <div class="glass border border-space-purple/30 rounded-3xl p-8 shadow-[0_0_30px_rgba(167,125,255,0.05)] text-left">
+            <h4 class="font-outfit font-bold text-white text-xl mb-6 flex items-center gap-3">
+              <span class="p-2 rounded-lg bg-space-accent/20 text-space-accent"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg></span>
+              Learning Outcomes
+            </h4>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-space-light/80 text-base">
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Master the fundamentals of satellite engineering and space mission design</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Build and integrate CubeSat subsystems through hands-on practical work</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Develop programming, electronics, testing, and systems engineering skills</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Follow a structured pathway for advanced and long-term learning</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Gain ongoing mentorship and technical support from SpacePoint experts</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Establish a dedicated satellite development laboratory</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Build institutional capacity to deliver space education independently</li>
+              <li class="flex items-start gap-2"><span class="text-space-accent mt-1">•</span> Inspire students to pursue careers in STEM, engineering, and the space sector</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Pictures with Purple Shadow -->
+        <div class="relative w-full max-w-5xl mb-12">
+          <div class="absolute inset-0 bg-[#A77DFF]/20 blur-[100px] rounded-[3rem] pointer-events-none"></div>
+          <div class="relative z-10 grid grid-cols-1 gap-4">
+            <div class="h-[400px] rounded-3xl overflow-hidden border border-space-purple/30 shadow-xl group">
+              <img src="assets/img/The%20Journey.jpg" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" alt="The Journey Workshop">
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Info Boxes -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full max-w-6xl mb-12 px-4 lg:px-0">
+          <div class="glass px-4 py-3 rounded-full border border-space-purple/30 flex justify-center items-center text-center"><span class="text-space-light text-sm mr-2 uppercase tracking-wider">Duration:</span> <span class="text-white font-bold">24–30 Hours + 6 Months</span></div>
+          <div class="glass px-4 py-3 rounded-full border border-space-purple/30 flex justify-center items-center text-center"><span class="text-space-light text-sm mr-2 uppercase tracking-wider">Best For:</span> <span class="text-white font-bold">Schools, Universities, Govt.</span></div>
+          <div class="glass px-4 py-3 rounded-full border border-space-purple/30 shadow-[0_0_15px_rgba(167,125,255,0.1)] flex justify-center items-center text-center"><span class="text-space-light text-sm mr-2 uppercase tracking-wider">Cost:</span> <span class="text-space-accent font-extrabold text-xl">1,000 AED / Participant</span></div>
+        </div>
+
+        <!-- 6. CTA Button -->
+        <div class="text-center">
+          <a href="book-workshop.html" class="btn-primary inline-flex items-center gap-3 px-12 py-5 rounded-full font-bold text-lg shadow-[0_0_40px_rgba(167,125,255,0.3)] hover:shadow-[0_0_60px_rgba(167,125,255,0.5)] hover:-translate-y-1 transition-all duration-300">
+            Book The Journey
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Style for simple fade-in -->
@@ -474,7 +569,7 @@
     // Handle URL hashes on load
     window.addEventListener("DOMContentLoaded", () => {
       const hash = window.location.hash.substring(1);
-      if(hash && ["quick-flight", "shallow-flight", "the-mission"].includes(hash)) {
+      if(hash && ["quick-flight", "shallow-flight", "the-mission", "the-journey"].includes(hash)) {
         switchView(hash);
       }
     });
@@ -482,7 +577,7 @@
     // Handle back/forward navigation
     window.addEventListener("hashchange", () => {
       const hash = window.location.hash.substring(1);
-      if(hash && ["quick-flight", "shallow-flight", "the-mission"].includes(hash)) {
+      if(hash && ["quick-flight", "shallow-flight", "the-mission", "the-journey"].includes(hash)) {
         switchView(hash);
       }
     });
