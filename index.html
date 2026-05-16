@@ -4,8 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<title>SpacePoint - UAE Space Education</title>
-<meta content="SpacePoint delivers hands-on space and satellite education programs for schools, universities, and institutions across the UAE." name="description"/>
+<!-- SEO Primary Meta Tags -->
+<title>SpacePoint | UAE Space Education &amp; Satellite Engineering Workshops</title>
+<meta content="SpacePoint delivers hands-on space education, satellite engineering workshops, and CubeSat learning for schools, universities, and institutions across the UAE and GCC." name="description"/>
+<meta content="space education, satellite engineering, CubeSat workshops, STEM education UAE, GCC space programs, space learning, student missions" name="keywords"/>
+<meta content="SpacePoint" name="author"/>
+<link href="https://spacepoint.ae/" rel="canonical"/>
+
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://spacepoint.ae/" property="og:url"/>
+<meta content="SpacePoint | UAE Space Education &amp; Satellite Engineering Workshops" property="og:title"/>
+<meta content="SpacePoint delivers hands-on space education, satellite engineering workshops, and CubeSat learning for schools, universities, and institutions across the UAE and GCC." property="og:description"/>
+<meta content="https://spacepoint.ae/assets/img/SpacePoint%20logo.png" property="og:image"/>
+
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://spacepoint.ae/" property="twitter:url"/>
+<meta content="SpacePoint | UAE Space Education &amp; Satellite Engineering Workshops" property="twitter:title"/>
+<meta content="SpacePoint delivers hands-on space education, satellite engineering workshops, and CubeSat learning for schools, universities, and institutions across the UAE and GCC." property="twitter:description"/>
+<meta content="https://spacepoint.ae/assets/img/SpacePoint%20logo.png" property="twitter:image"/>
+
+<!-- Fonts and Styles -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -32,13 +52,71 @@
 <link href="assets/css/style.css" rel="stylesheet"/>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZSXTHGZW0"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LZSXTHGZW0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-LZSXTHGZW0');
+</script>
+
+<!-- AEO & Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "SpacePoint",
+  "url": "https://spacepoint.ae",
+  "logo": "https://spacepoint.ae/assets/img/SpacePoint%20logo.png",
+  "description": "SpacePoint is a UAE-based space education company delivering hands-on satellite engineering workshops, programs, and educational experiences for students and institutions.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE",
+    "addressRegion": "Dubai"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/spacepoint",
+    "https://www.instagram.com/spacepoint.ae"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Satellite Engineering Workshops",
+      "description": "Hands-on satellite engineering workflows including subsystem integration, mission planning, and testing.",
+      "category": "Educational Program"
+    },
+    {
+      "@type": "Offer",
+      "name": "CubeSat Learning Modules",
+      "description": "Educational experiences focusing on real satellite systems and STEM education for schools and universities.",
+      "category": "Educational Program"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do students learn at SpacePoint?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Students gain hands-on experience in satellite systems, electrical integration, mechanical assembly, software testing, and systems thinking, alongside future-ready skills like teamwork and critical thinking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What career paths does SpacePoint qualify students for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Potential pathways include Satellite Engineering, Aerospace Systems, Robotics, AI Engineering, and Technical Entrepreneurship."
+      }
+    }
+  ]
+}
 </script>
 </head>
 <body class="bg-space-dark">
@@ -57,7 +135,7 @@
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar" style="background:rgba(5,3,10,.4);backdrop-filter:blur(8px);">
 <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
 <!-- Logo -->
-<a class="flex items-center shrink-0" href="index.html">
+<a aria-label="SpacePoint Home" class="flex items-center shrink-0" href="index.html">
 <img alt="SpacePoint" class="h-8 w-auto" onerror="this.style.display='none';document.getElementById('logoText').style.display='block'" src="assets/img/SpacePoint logo.png"/>
 <span class="hidden font-outfit font-bold text-xl text-white tracking-wide" id="logoText">Space<span class="text-space-accent">Point</span></span>
 </a>
@@ -151,6 +229,7 @@
   </div>
 
 <!-- ════════════════ HERO ════════════════ -->
+<main id="main-content">
 <section class="relative z-10 min-h-screen flex items-center pt-20" id="home">
 <!-- Orbit lines behind hero -->
 <div class="absolute inset-0 flex items-center justify-end pointer-events-none overflow-hidden">
@@ -927,14 +1006,14 @@
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Training Sessions" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Training Sessions 4.JPG"/>
+<img alt="Training Sessions" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Training Sessions 4.JPG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Training Sessions</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Competitions" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/compitations 1.JPEG"/>
+<img alt="Competitions" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/compitations 1.JPEG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Competitions</h4>
@@ -945,77 +1024,77 @@
 <!-- Items -->
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Demo Day" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Demo Day 2.jpeg"/>
+<img alt="Demo Day" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Demo Day 2.jpeg"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Demo Day</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Electrical Integration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Electrical Integration 1.JPG"/>
+<img alt="Electrical Integration" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Electrical Integration 1.JPG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Electrical Integration</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Group Work" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Group Work 4.JPEG"/>
+<img alt="Group Work" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Group Work 4.JPEG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Group Work</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Instructors" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Instructors 4.JPEG"/>
+<img alt="Instructors" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Instructors 4.JPEG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Instructors</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Kids Workshop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Kids Workshop 2.jpeg"/>
+<img alt="Kids Workshop" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Kids Workshop 2.jpeg"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Kids Workshop</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Mechanical Assembly" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Mechanical Assembly 6.jpeg"/>
+<img alt="Mechanical Assembly" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Mechanical Assembly 6.jpeg"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Mechanical Assembly</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Mission Testing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Mission Testing 1.jpeg"/>
+<img alt="Mission Testing" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Mission Testing 1.jpeg"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Mission Testing</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Technical Documentation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Technical Documentation 5.JPEG"/>
+<img alt="Technical Documentation" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Technical Documentation 5.JPEG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Technical Documentation</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Theory" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Theory 2.jpeg"/>
+<img alt="Theory" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Theory 2.jpeg"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Theory</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Training Sessions" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Training Sessions 4.JPG"/>
+<img alt="Training Sessions" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/Training Sessions 4.JPG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Training Sessions</h4>
 </div>
 <div class="group flex flex-col gap-4 flex-shrink-0 w-64 sm:w-80 cursor-pointer">
 <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-space-purple/10 border border-space-purple/20">
-<img alt="Competitions" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/compitations 1.JPEG"/>
+<img alt="Competitions" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/img/gallery/compitations 1.JPEG"/>
 </div>
 <h4 class="text-space-light font-medium tracking-wider uppercase text-xs sm:text-sm text-center transition-colors group-hover:text-space-accent">
               Competitions</h4>
@@ -1082,6 +1161,694 @@
 </div>
 </div>
 </section>
+
+<!-- ════════════════ GLOBAL REACH (MAP) ════════════════ -->
+<section id="global-reach"
+  class="relative z-10 pt-24 pb-32 overflow-hidden bg-space-dark border-t border-space-purple/20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-20">
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-purple/20 border border-space-purple/30 text-space-accent text-xs font-semibold tracking-wide uppercase mb-4">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-space-accent"></span>
+      </span>
+      Global Reach
+    </div>
+    <h2 class="font-outfit font-extrabold text-4xl md:text-5xl text-white mb-6">
+      SpacePoint Reached <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-space-accent to-purple-400">To</span>
+    </h2>
+    <p class="text-space-light/80 text-lg max-w-2xl mx-auto leading-relaxed mb-12">
+      Empowering students and future space innovators across the globe.
+    </p>
+
+    <!-- Map Container -->
+    <div
+      class="relative w-full h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border border-space-purple/30 shadow-[0_0_50px_rgba(167,125,255,0.15)] flex items-center justify-center bg-[#080410]">
+      <div id="globeViz" class="absolute inset-0 cursor-move"></div>
+
+      <!-- Overlay list of countries -->
+      <div class="absolute bottom-6 left-6 right-6 flex flex-wrap justify-center gap-3 z-10 pointer-events-none">
+        <button onclick="flyToGlobe(23.4241, 53.8478)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-bold text-white border-space-accent/60 bg-space-purple/20 shadow-[0_0_20px_rgba(167,125,255,0.4)] hover:scale-105 hover:bg-space-purple/40 transition-all cursor-pointer">🇦🇪
+          UAE (HQ)</button>
+        <button onclick="flyToGlobe(26.8206, 30.8025)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇪🇬
+          Egypt</button>
+        <button onclick="flyToGlobe(9.0820, 8.6753)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇳🇬
+          Nigeria</button>
+        <button onclick="flyToGlobe(23.8859, 45.0792)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇸🇦
+          KSA</button>
+        <button onclick="flyToGlobe(21.4735, 55.9754)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇴🇲
+          Oman</button>
+        <button onclick="flyToGlobe(35.9375, 14.3978)"
+          class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇲🇹
+          Malta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle background glow -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-space-accent/10 blur-[120px] pointer-events-none">
+  </div>
+</section>
+
+<!-- ════════════════ FAQ SECTION ════════════════ -->
+<section id="faq" class="relative z-10 py-24 bg-transparent border-t border-space-purple/20 overflow-hidden">
+  <!-- Subtle background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[500px] bg-space-purple/5 blur-[150px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
+    <!-- Section label -->
+    <div class="flex items-center justify-center gap-3 mb-4 fade-in">
+      <div class="w-6 h-0.5 bg-space-accent rounded"></div>
+      <span class="text-space-accent font-semibold uppercase tracking-widest text-sm">FAQ</span>
+      <div class="w-6 h-0.5 bg-space-accent rounded"></div>
+    </div>
+    
+    <!-- Title -->
+    <h2 class="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 text-center fade-in" style="transition-delay: 0.1s;">
+      Frequently Asked Questions
+    </h2>
+    <p class="text-space-light text-lg leading-relaxed text-center max-w-2xl mx-auto mb-16 fade-in" style="transition-delay: 0.2s;">
+      Find answers to common questions about SpacePoint programs, workshops, and how we inspire the next generation of space engineers.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start fade-in" style="transition-delay: 0.3s;">
+      
+      <!-- Left Sidebar Card -->
+      <div class="lg:col-span-4 lg:sticky lg:top-28 glass border border-space-purple/20 rounded-3xl p-8 flex flex-col shadow-[0_0_30px_rgba(167,125,255,0.05)] hover:border-space-purple/40 hover:shadow-[0_0_30px_rgba(167,125,255,0.1)] transition-all duration-300">
+        <!-- Satellite Icon -->
+        <div class="w-full flex justify-center mb-6">
+           <img src="assets/img/Products photos/MiniCubeSat.png" alt="Satellite" class="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(167,125,255,0.6)] cubesat-wrap" onerror="this.src='assets/img/SpacePoint logo.png'"/>
+        </div>
+        
+        <h3 class="font-outfit font-bold text-2xl text-white mb-3 text-center">Still have questions?</h3>
+        <p class="text-space-light/80 text-sm mb-8 leading-relaxed text-center">
+          We’re here to help schools, universities, and organizations choose the right program.
+        </p>
+
+        <div class="flex flex-col gap-3 mb-8">
+          <a href="book-workshop.html" class="w-full bg-space-purple hover:bg-space-accent text-white font-semibold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_15px_rgba(167,125,255,0.3)] hover:shadow-[0_0_25px_rgba(167,125,255,0.5)] hover:-translate-y-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Book a Call
+          </a>
+          <a href="mailto:info@spacepoint.ae" class="w-full border border-space-purple/40 hover:border-space-accent hover:bg-space-purple/10 text-white font-semibold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            Send an Email
+          </a>
+        </div>
+
+        <div class="space-y-4 border-t border-space-purple/20 pt-6 mb-8">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-accent flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-white text-sm font-bold">Expert Instructors</h4>
+              <p class="text-space-light/60 text-xs">Learn from space professionals.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-accent flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-white text-sm font-bold">Safe & Supervised</h4>
+              <p class="text-space-light/60 text-xs">Safety is our top priority.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-accent flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-white text-sm font-bold">Certificates Included</h4>
+              <p class="text-space-light/60 text-xs">Get certified upon completion.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-accent flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-white text-sm font-bold">Trusted by Institutions</h4>
+              <p class="text-space-light/60 text-xs">Working with schools across UAE.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0B0510]/80 rounded-2xl p-5 border border-space-purple/20 relative overflow-hidden backdrop-blur-md">
+          <div class="absolute -right-4 -top-4 w-16 h-16 bg-space-purple opacity-20 blur-xl rounded-full pointer-events-none"></div>
+          <img src="assets/img/gallery/Group Work 4.JPEG" alt="Students" class="w-full h-24 object-cover rounded-xl mb-4 border border-space-purple/20 opacity-90"/>
+          <svg class="w-6 h-6 text-space-accent opacity-50 mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path></svg>
+          <p class="text-space-light/90 text-[13px] italic leading-relaxed">"The best workshop I've ever attended. I built, tested and understood a real satellite system!"</p>
+          <div class="mt-3 flex items-center gap-2">
+            <div class="w-5 h-px bg-space-accent"></div>
+            <p class="text-space-accent text-[10px] font-bold tracking-wider uppercase">Student Participant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right FAQ Content Area -->
+      <div class="lg:col-span-8 flex flex-col gap-6">
+        
+        <!-- Category Tabs -->
+        <div class="glass p-2 rounded-2xl border border-space-purple/20 overflow-hidden sticky top-28 lg:top-24 z-30 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+          <div id="faqTabsContainer" class="flex w-full overflow-x-auto hide-scrollbar gap-2 snap-x cursor-grab select-none">
+            <button class="faq-tab active flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-white bg-space-purple border border-space-purple shadow-[0_0_15px_rgba(167,125,255,0.4)]" data-target="General">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span class="text-sm font-bold tracking-wide">General</span>
+            </button>
+            <button class="faq-tab flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-space-light/70 hover:text-white hover:bg-space-purple/20 border border-transparent" data-target="Programs">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+              <span class="text-sm font-bold tracking-wide">Programs</span>
+            </button>
+            <button class="faq-tab flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-space-light/70 hover:text-white hover:bg-space-purple/20 border border-transparent" data-target="Outcomes">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              <span class="text-sm font-bold tracking-wide">Outcomes & Careers</span>
+            </button>
+            <button class="faq-tab flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-space-light/70 hover:text-white hover:bg-space-purple/20 border border-transparent" data-target="Safety">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <span class="text-sm font-bold tracking-wide">Safety & Logistics</span>
+            </button>
+            <button class="faq-tab flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-space-light/70 hover:text-white hover:bg-space-purple/20 border border-transparent" data-target="Partnerships">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <span class="text-sm font-bold tracking-wide">Partnerships & Institutions</span>
+            </button>
+            <button class="faq-tab flex-shrink-0 snap-center flex items-center gap-2 px-5 py-3 rounded-xl transition-all duration-300 text-space-light/70 hover:text-white hover:bg-space-purple/20 border border-transparent" data-target="Products">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+              <span class="text-sm font-bold tracking-wide">Store</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQ Items Container -->
+        <div class="faq-container w-full relative min-h-[400px]">
+          
+          <!-- GENERAL -->
+          <div class="faq-group flex flex-col gap-4 opacity-100 transition-opacity duration-300" id="faq-General">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What is SpacePoint?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  SpacePoint is a UAE-based space education company that delivers hands-on satellite engineering workshops, programs, and educational kits for schools, universities, and institutions.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Who are SpacePoint programs designed for?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Our programs are designed for school students (Ages 12+), university students, STEM clubs, educational institutions, youth organizations, and future space enthusiasts.
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Do students need prior engineering or programming experience?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  No. Most of our workshops are beginner-friendly and designed to guide students step-by-step through their learning journey.
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What makes SpacePoint different?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Unlike traditional workshops that focus mainly on theory, SpacePoint allows students to experience real satellite engineering workflows including assembly, testing, mission planning, and subsystem integration.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROGRAMS -->
+          <div class="faq-group hidden flex-col gap-4 opacity-0 transition-opacity duration-300" id="faq-Programs">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What happens during the workshop?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Students work in teams to explore satellite subsystems, assemble components, test systems, simulate missions, and understand how real satellites are developed.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Are the workshops practical or theoretical?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Our workshops are heavily hands-on and project-based, combining practical engineering activities with guided explanations of theoretical concepts.
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">How long are the workshops?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>2-3 hour introductory workshops</li>
+                    <li>6-10 hour intermediate programs</li>
+                    <li>18-24 hour full mission experiences</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Do you provide online workshops?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. SpacePoint offers both in-person and online learning experiences depending on the program.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCHOOLS & UNIVERSITIES -->
+          <div class="faq-group hidden flex-col gap-4 opacity-0 transition-opacity duration-300" id="faq-Outcomes">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What do students learn?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  <p class="mb-4">Students gain a hands-on understanding of satellite development and advanced technologies through practical experiences:</p>
+                  <div class="space-y-4">
+                    <div>
+                      <h5 class="text-space-accent font-bold text-xs uppercase tracking-widest mb-2">Technical Skills</h5>
+                      <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Satellite Systems:</strong> Understanding subsystems (power, comms, computing) and applications (GPS, Earth observation).</li>
+                        <li><strong>Integration:</strong> Wiring, sensors, and electronic subsystem connectivity.</li>
+                        <li><strong>Software & Programming:</strong> Embedded systems, simulations, and troubleshooting.</li>
+                        <li><strong>Systems Thinking:</strong> Engineering trade-offs and mission-based problem solving.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="text-space-accent font-bold text-xs uppercase tracking-widest mb-2">Future-Ready Skills</h5>
+                      <ul class="list-disc pl-5 space-y-1">
+                        <li>Teamwork & Leadership</li>
+                        <li>Critical Thinking</li>
+                        <li>Public Speaking & Technical Presentation</li>
+                        <li>Innovation & Creativity</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What career paths does this qualify students for?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  <p class="mb-3">Our programs build foundations for careers in high-growth sectors:</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                      <li><strong>Space:</strong> Satellite / Systems Engineer, Mission Specialist.</li>
+                      <li><strong>Tech:</strong> Robotics, Embedded Systems, AI Engineer.</li>
+                      <li><strong>General:</strong> Electrical, Mechanical, Software Engineer.</li>
+                      <li><strong>Future:</strong> Tech Entrepreneur, STEM Researcher.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Will students receive certificates?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. Participants receive certificates upon successful completion of the program.
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Can these workshops help with space careers?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Absolutely. Our programs are designed to expose students to real-world aerospace engineering concepts and future STEM career pathways.
+                </div>
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Do students build a real satellite?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Students work with educational satellite development systems and engineering workflows inspired by real CubeSat missions.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAFETY & LOGISTICS -->
+          <div class="faq-group hidden flex-col gap-4 opacity-0 transition-opacity duration-300" id="faq-Safety">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Is the workshop safe for younger students?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. All workshop activities are designed for educational use and are supervised by trained instructors.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">How many students can join one workshop?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Workshop capacity depends on the selected program, venue, and available equipment. We can support both small groups and large cohorts.
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Do schools need to provide equipment?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Usually no. SpacePoint provides the required educational kits and workshop materials unless agreed otherwise.
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Can workshops be conducted at our school?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. We can deliver programs directly at your campus, innovation hub, lab, or event venue across the UAE and GCC.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARTNERSHIPS -->
+          <div class="faq-group hidden flex-col gap-4 opacity-0 transition-opacity duration-300" id="faq-Partnerships">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Has SpacePoint worked with schools before?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. SpacePoint has delivered workshops and collaborations with multiple schools, universities, and organizations across the UAE and beyond.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Can organizations partner with SpacePoint?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. We actively collaborate with educational institutions, innovation hubs, youth organizations, and industry partners.
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">Do you support competitions or hackathons?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Yes. We can support STEM competitions, innovation challenges, demo days, and educational events.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCTS -->
+          <div class="faq-group hidden flex-col gap-4 opacity-0 transition-opacity duration-300" id="faq-Products">
+            <!-- Item 1 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">What is the Ground Station store?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Ground Station is SpacePoint’s educational store featuring satellite kits, hardware, learning tools, and branded merchandise.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="faq-item bg-space-dark/50 rounded-2xl border border-space-purple/20 overflow-hidden transition-all duration-300 hover:border-space-purple/40 hover:shadow-[0_0_20px_rgba(167,125,255,0.1)]">
+              <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group">
+                <span class="font-outfit font-bold text-lg text-white group-hover:text-space-accent transition-colors">When will the products become available?</span>
+                <div class="w-8 h-8 rounded-full bg-space-purple/20 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-space-purple/40">
+                  <svg class="w-4 h-4 text-space-accent faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+              </button>
+              <div class="faq-answer transition-all duration-500 ease-in-out opacity-0" style="max-height: 0px;">
+                <div class="px-6 pb-6 pt-1 text-space-light/90 leading-relaxed text-sm">
+                  Some products are currently listed as “Coming Soon.” Users can register interest to receive updates when products launch.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // FAQ Tabs Drag to Scroll
+    const slider = document.getElementById('faqTabsContainer');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (slider) {
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('cursor-grabbing');
+        slider.classList.remove('cursor-grab');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('cursor-grabbing');
+        slider.classList.add('cursor-grab');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('cursor-grabbing');
+        slider.classList.add('cursor-grab');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-button');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+        
+        // Close all others in the same group
+        const group = item.closest('.faq-group');
+        group.querySelectorAll('.faq-item').forEach(otherItem => {
+          if(otherItem !== item && otherItem.classList.contains('is-open')) {
+            otherItem.classList.remove('is-open', 'bg-space-purple/10', 'border-space-purple/40');
+            otherItem.classList.add('bg-space-dark/50');
+            otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+            otherItem.querySelector('.faq-answer').style.opacity = '0';
+            otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+            otherItem.querySelector('.faq-icon').classList.replace('text-white', 'text-space-accent');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove('is-open', 'bg-space-purple/10', 'border-space-purple/40');
+          item.classList.add('bg-space-dark/50');
+          answer.style.maxHeight = '0px';
+          answer.style.opacity = '0';
+          icon.style.transform = 'rotate(0deg)';
+          icon.classList.replace('text-white', 'text-space-accent');
+        } else {
+          item.classList.add('is-open', 'bg-space-purple/10', 'border-space-purple/40');
+          item.classList.remove('bg-space-dark/50');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          answer.style.opacity = '1';
+          icon.style.transform = 'rotate(45deg)';
+          icon.classList.replace('text-space-accent', 'text-white');
+        }
+      });
+    });
+
+    // Default open first item
+    const firstItem = document.querySelector('#faq-General .faq-item');
+    if (firstItem) {
+      firstItem.classList.add('is-open', 'bg-space-purple/10', 'border-space-purple/40');
+      firstItem.classList.remove('bg-space-dark/50');
+      const answer = firstItem.querySelector('.faq-answer');
+      answer.style.maxHeight = '500px'; // approximate max height for first load
+      answer.style.opacity = '1';
+      const icon = firstItem.querySelector('.faq-icon');
+      icon.style.transform = 'rotate(45deg)';
+      icon.classList.replace('text-space-accent', 'text-white');
+      // Recalculate true scrollHeight after a moment
+      setTimeout(() => { answer.style.maxHeight = answer.scrollHeight + 'px'; }, 100);
+    }
+
+    // FAQ Tabs
+    const tabs = document.querySelectorAll('.faq-tab');
+    const groups = document.querySelectorAll('.faq-group');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Active Tab Styling
+        tabs.forEach(t => {
+          t.classList.remove('active', 'bg-space-purple', 'border-space-purple', 'shadow-[0_0_15px_rgba(167,125,255,0.4)]', 'text-white');
+          t.classList.add('text-space-light/70', 'border-transparent');
+        });
+        tab.classList.add('active', 'bg-space-purple', 'border-space-purple', 'shadow-[0_0_15px_rgba(167,125,255,0.4)]', 'text-white');
+        tab.classList.remove('text-space-light/70', 'border-transparent');
+
+        const target = tab.getAttribute('data-target');
+        
+        // Groups Transition
+        groups.forEach(group => {
+          group.style.opacity = '0';
+          setTimeout(() => {
+            group.classList.add('hidden');
+            group.classList.remove('flex');
+            
+            if (group.id === 'faq-' + target) {
+              group.classList.remove('hidden');
+              group.classList.add('flex');
+              setTimeout(() => {
+                group.style.opacity = '1';
+              }, 50);
+            }
+          }, 300);
+        });
+      });
+    });
+  });
+</script>
+
 <!-- ════════════════ COMMUNITY SIGNUP ════════════════ -->
 <section class="relative z-10 py-24 bg-space-dark border-t border-space-purple/20" id="community">
 <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center fade-in">
@@ -1109,43 +1876,10 @@
 </div>
 </section>
 
-<!-- ════════════════ GLOBAL REACH (MAP) ════════════════ -->
-<section id="global-reach" class="relative z-10 pt-24 pb-32 overflow-hidden bg-space-dark border-t border-space-purple/20">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-20">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-purple/20 border border-space-purple/30 text-space-accent text-xs font-semibold tracking-wide uppercase mb-4">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-accent opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-space-accent"></span>
-      </span>
-      Global Reach
-    </div>
-    <h2 class="font-outfit font-extrabold text-4xl md:text-5xl text-white mb-6">
-      SpacePoint Reached <span class="text-transparent bg-clip-text bg-gradient-to-r from-space-accent to-purple-400">To</span>
-    </h2>
-    <p class="text-space-light/80 text-lg max-w-2xl mx-auto leading-relaxed mb-12">
-      Empowering students and future space innovators across the globe.
-    </p>
 
-    <!-- Map Container -->
-    <div class="relative w-full h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border border-space-purple/30 shadow-[0_0_50px_rgba(167,125,255,0.15)] flex items-center justify-center bg-[#080410]">
-      <div id="globeViz" class="absolute inset-0 cursor-move"></div>
-      
-      <!-- Overlay list of countries -->
-      <div class="absolute bottom-6 left-6 right-6 flex flex-wrap justify-center gap-3 z-10 pointer-events-none">
-        <button onclick="flyToGlobe(23.4241, 53.8478)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-bold text-white border-space-accent/60 bg-space-purple/20 shadow-[0_0_20px_rgba(167,125,255,0.4)] hover:scale-105 hover:bg-space-purple/40 transition-all cursor-pointer">🇦🇪 UAE (HQ)</button>
-        <button onclick="flyToGlobe(26.8206, 30.8025)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇪🇬 Egypt</button>
-        <button onclick="flyToGlobe(9.0820, 8.6753)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇳🇬 Nigeria</button>
-        <button onclick="flyToGlobe(23.8859, 45.0792)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇸🇦 KSA</button>
-        <button onclick="flyToGlobe(21.4735, 55.9754)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇴🇲 Oman</button>
-        <button onclick="flyToGlobe(35.9375, 14.3978)" class="pointer-events-auto glass px-4 py-2 rounded-xl text-sm font-medium text-white border-space-purple/30 bg-space-dark/50 hover:scale-105 hover:border-space-accent hover:text-space-accent transition-all cursor-pointer">🇲🇹 Malta</button>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Subtle background glow -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-space-accent/10 blur-[120px] pointer-events-none"></div>
-</section>
 
+
+</main>
 
 <!-- ════════════════ FOOTER & CONTACT ════════════════ -->
   <footer class="relative z-10 bg-[#0B0510] pt-20 pb-8 border-t border-space-purple/20 overflow-hidden" id="contact">

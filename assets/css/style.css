@@ -376,3 +376,13 @@ textarea {
 .popup-visible #newsletterModal {
   transform: scale(1) translateY(0) !important;
 }
+
+/* Hide scrollbar for cleaner UI */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
