@@ -4,9 +4,10 @@ import re
 # ════════════════ CONFIGURATION ════════════════
 # Update these strings whenever you want to change the navigation menu site-wide.
 
-NAV_LINKS_HTML = """        <a href="index.html#" class="nav-link hover:text-white transition-colors">Home</a>
+NAV_LINKS_HTML = """        <a href="index.html" class="nav-link hover:text-white transition-colors">Home</a>
         <a href="about.html" class="nav-link hover:text-white transition-colors">About</a>
         <a href="programs.html" class="nav-link hover:text-white transition-colors">Programs</a>
+        <a href="use_cases.html" class="nav-link hover:text-white transition-colors">Use Cases</a>
         
         <!-- Discover dropdown -->
         <div class="relative">
@@ -35,7 +36,20 @@ NAV_LINKS_HTML = """        <a href="index.html#" class="nav-link hover:text-whi
         <a href="index.html#blog" class="nav-link hover:text-white transition-colors">Blog</a>
         <a href="index.html#contact" class="nav-link hover:text-white transition-colors">Contact</a>"""
 
-MOBILE_NAV_LINKS_HTML = """            <a href="journey.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Journey</a>
+MOBILE_NAV_LINKS_HTML = """        <a href="index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
+        <a href="about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
+        <a href="programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
+        <a href="use_cases.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Use Cases</a>
+        <a href="index.html#blog" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
+        <a href="index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
+        
+        <div class="flex flex-col gap-2">
+          <button id="mobileDiscoverBtn" class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white w-full text-left font-outfit text-lg font-semibold">
+            Discover
+            <svg id="mobileDiscoverIcon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <div id="mobileDiscoverList" class="hidden flex flex-col gap-1 pl-4 border-l border-space-purple/10">
+            <a href="journey.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Journey</a>
             <a href="team.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Team</a>
             <a href="alumni.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Alumni</a>
             <a href="ambassadors.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Ambassadors</a>
@@ -44,7 +58,9 @@ MOBILE_NAV_LINKS_HTML = """            <a href="journey.html" class="px-3 py-2 t
             <a href="media_coverage.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Media Coverage</a>
             <a href="our_platforms.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Platforms</a>
             <a href="resources.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Resources</a>
-            <a href="index.html#events" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Events</a>"""
+            <a href="index.html#events" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Events</a>
+          </div>
+        </div>"""
 
 # ════════════════ PROCESSING LOGIC ════════════════
 
@@ -57,9 +73,9 @@ def update_page_navigation(file_path):
     new_desktop_nav = f'\\1\n{NAV_LINKS_HTML}\n      \\3'
     content = re.sub(desktop_pattern, new_desktop_nav, content, flags=re.DOTALL)
 
-    # 2. Replace Mobile "Discover" List
-    mobile_pattern = r'(<div[^>]*id="mobileDiscoverList"[^>]*>)(.*?)(</div>)'
-    new_mobile_nav = f'\\1\n{MOBILE_NAV_LINKS_HTML}\n          \\3'
+    # 2. Replace Mobile Nav
+    mobile_pattern = r'(<nav[^>]*class="flex flex-col gap-1 font-outfit text-lg font-semibold"[^>]*>)(.*?)(</nav>)'
+    new_mobile_nav = f'\\1\n{MOBILE_NAV_LINKS_HTML}\n      \\3'
     content = re.sub(mobile_pattern, new_mobile_nav, content, flags=re.DOTALL)
 
     # 3. Replace direct index.html#programs with programs.html globally (for mobile nav and any other references)

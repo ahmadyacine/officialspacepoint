@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>SpacePoint | Use Cases & Missions</title>
+<meta content="Discover how SpacePoint collaborates with leading institutions and government entities to deliver hands-on space education and real-world impact across the UAE." name="description"/>
+<meta content="space education, satellite engineering, CubeSat workshops, STEM education UAE, GCC space programs, use cases, missions" name="keywords"/>
+<meta content="SpacePoint" name="author"/>
+<link href="https://spacepoint.ae/use_cases.html" rel="canonical"/>
+
+<!-- Fonts and Styles -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'space-dark': '#05030A',
+            'space-purple-dark': '#231134',
+            'space-purple': '#653F84',
+            'space-light': '#D7D2CB',
+            'space-accent': '#A77DFF',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+        }
+      }
+    }
+</script>
+<link href="assets/css/style.css" rel="stylesheet"/>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LZSXTHGZW0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LZSXTHGZW0');
+</script>
+</head>
+<body class="bg-space-dark overflow-x-hidden">
+<!-- Star canvas -->
+<canvas id="starCanvas"></canvas>
+<div id="customCursor">
+<svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFFFFF"></path>
+</svg>
+</div>
+
+<!-- Nebula blobs -->
+<div class="nebula w-[300px] h-[300px] md:w-[600px] md:h-[600px] top-[-100px] left-[-50px] md:top-[-200px] md:left-[-100px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.35),transparent)"></div>
+<div class="nebula w-[250px] h-[250px] md:w-[500px] md:h-[500px] top-[30vh] right-[-50px] md:right-[-150px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(35,17,52,.7),transparent)"></div>
+<div class="nebula w-[200px] h-[200px] md:w-[400px] md:h-[400px] bottom-[10vh] left-[10vw] md:left-[20vw] opacity-30 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.2),transparent)"></div>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar" style="background:rgba(5,3,10,.4);backdrop-filter:blur(8px);">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
+<!-- Logo -->
+<a aria-label="SpacePoint Home" class="flex items-center shrink-0" href="index.html">
+<img alt="SpacePoint" class="h-8 w-auto" onerror="this.style.display='none';document.getElementById('logoText').style.display='block'" src="assets/img/SpacePoint logo.png"/>
+<span class="hidden font-outfit font-bold text-xl text-white tracking-wide" id="logoText">Space<span class="text-space-accent">Point</span></span>
+</a>
+<!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-7 font-inter text-sm font-medium text-space-light">
+        <a href="index.html" class="nav-link hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="nav-link hover:text-white transition-colors">About</a>
+        <a href="programs.html" class="nav-link hover:text-white transition-colors">Programs</a>
+        <a href="use_cases.html" class="nav-link hover:text-white transition-colors">Use Cases</a>
+        
+        <!-- Discover dropdown -->
+        <div class="relative">
+          <button id="discoverBtn" class="nav-link flex items-center gap-1 hover:text-white transition-colors focus:outline-none">
+            Discover
+            <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <div id="discoverMenu" class="absolute top-8 left-1/2 -translate-x-1/2 w-[320px] opacity-0 pointer-events-none translate-y-2 z-50 transition-all duration-300">
+            <div class="glass rounded-xl p-4 mt-2 border border-space-purple/20 shadow-2xl">
+              <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-space-light">
+                <a href="journey.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Journey</a>
+                <a href="team.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Team</a>
+                <a href="alumni.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Alumni</a>
+                <a href="ambassadors.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Ambassadors</a>
+                <a href="shop.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Shop</a>
+                <a href="student_mission.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Student Missions</a>
+                <a href="media_coverage.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Media Coverage</a>
+                <a href="our_platforms.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Platforms</a>
+                <a href="resources.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Resources</a>
+                <a href="index.html#events" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Events</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#blog" class="nav-link hover:text-white transition-colors">Blog</a>
+        <a href="index.html#contact" class="nav-link hover:text-white transition-colors">Contact</a>
+      </nav>
+<!-- CTA + mobile trigger -->
+<div class="flex items-center gap-4">
+<a class="hidden lg:inline-flex btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer" href="book-workshop.html">
+          Launch a Program
+        </a>
+<!-- Mobile burger -->
+<button aria-label="Open menu" class="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none" id="mobileMenuBtn">
+<span class="w-6 h-0.5 bg-white rounded"></span>
+<span class="w-4 h-0.5 bg-space-accent rounded"></span>
+<span class="w-6 h-0.5 bg-white rounded"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- ════════════════ MOBILE MENU ════════════════ -->
+  <div id="mobileMenu" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-500 lg:hidden flex flex-col" style="background: linear-gradient(160deg, #05030A 60%, #231134);">
+    <div class="flex items-center justify-between h-16 px-6 border-b border-space-purple/20">
+      <img src="assets/img/SpacePoint logo.png" alt="SpacePoint" class="h-7 w-auto">
+      <button id="mobileMenuClose" class="p-2 text-white focus:outline-none" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
+      <nav class="flex flex-col gap-1 font-outfit text-lg font-semibold">
+        <a href="index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
+        <a href="about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
+        <a href="programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
+        <a href="use_cases.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Use Cases</a>
+        <a href="index.html#blog" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
+        <a href="index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
+        
+        <div class="flex flex-col gap-2">
+          <button id="mobileDiscoverBtn" class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white w-full text-left font-outfit text-lg font-semibold">
+            Discover
+            <svg id="mobileDiscoverIcon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <div id="mobileDiscoverList" class="hidden flex flex-col gap-1 pl-4 border-l border-space-purple/10">
+            <a href="journey.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Journey</a>
+            <a href="team.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Team</a>
+            <a href="alumni.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Alumni</a>
+            <a href="ambassadors.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Ambassadors</a>
+            <a href="shop.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Shop</a>
+            <a href="student_mission.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Student Missions</a>
+            <a href="media_coverage.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Media Coverage</a>
+            <a href="our_platforms.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Platforms</a>
+            <a href="resources.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Resources</a>
+            <a href="index.html#events" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Events</a>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="mt-auto pt-8">
+        <a href="book-workshop.html" class="btn-primary block text-center text-white font-semibold py-4 rounded-xl text-base">Launch a Program</a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- ════════════════ MAIN CONTENT ════════════════ -->
+<main id="main-content">
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="relative z-10 pt-32 pb-16 border-b border-space-purple/20 flex flex-col justify-center min-h-[85vh] overflow-hidden">
+    <!-- Background Earth image -->
+    <div class="absolute inset-0 z-0 opacity-50">
+      <img src="assets/img/Case studies/earth_pic.jpg" alt="Earth from Space" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-space-dark via-space-dark/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-space-dark via-transparent to-transparent"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
+      <p class="text-space-accent text-sm font-semibold uppercase tracking-widest mb-4 fade-in">USE CASES</p>
+      <h1 class="font-outfit font-extrabold text-5xl sm:text-6xl lg:text-[4.5rem] leading-tight text-white mb-6 fade-in" style="transition-delay:.1s">
+        Our Missions.<br/>
+        Real Impact.
+      </h1>
+      <p class="text-space-light text-base lg:text-lg leading-relaxed max-w-xl mb-16 fade-in" style="transition-delay:.2s">
+        Discover how SpacePoint collaborates with leading institutions and government entities to deliver hands-on space education and real-world impact across the UAE.
+      </p>
+      
+      <!-- Stats Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 fade-in" style="transition-delay:.3s">
+        <!-- Stat 1 -->
+        <div class="flex items-center gap-4 border-l-2 border-space-accent/50 pl-4">
+          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-space-purple/30 rounded-xl">
+             <svg class="w-6 h-6 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div>
+             <span class="font-outfit font-bold text-2xl lg:text-3xl text-white block">1,000+</span>
+             <p class="text-space-light text-xs lg:text-sm font-medium">Students Trained</p>
+          </div>
+        </div>
+        <!-- Stat 2 -->
+        <div class="flex items-center gap-4 border-l-2 border-space-accent/50 pl-4">
+          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-space-purple/30 rounded-xl">
+             <svg class="w-6 h-6 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div>
+             <span class="font-outfit font-bold text-2xl lg:text-3xl text-white block">15+</span>
+             <p class="text-space-light text-xs lg:text-sm font-medium">Institutions</p>
+          </div>
+        </div>
+        <!-- Stat 3 -->
+        <div class="flex items-center gap-4 border-l-2 border-space-accent/50 pl-4">
+          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-space-purple/30 rounded-xl">
+             <svg class="w-6 h-6 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div>
+             <span class="font-outfit font-bold text-2xl lg:text-3xl text-white block">10+</span>
+             <p class="text-space-light text-xs lg:text-sm font-medium">Programs Delivered</p>
+          </div>
+        </div>
+        <!-- Stat 4 -->
+        <div class="flex items-center gap-4 border-l-2 border-space-accent/50 pl-4">
+          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-space-purple/30 rounded-xl">
+             <svg class="w-6 h-6 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div>
+             <span class="font-outfit font-bold text-2xl lg:text-3xl text-white block">4</span>
+             <p class="text-space-light text-xs lg:text-sm font-medium">UAE Cities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PARTNERS ════════════════ -->
+  <section class="py-12 bg-[#0B0510] border-b border-space-purple/20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-space-accent text-sm font-semibold uppercase tracking-widest mb-10">Trusted by our partners</p>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-80 fade-in">
+        <img src="assets/img/Case studies/Logos/hct-main.png" class="h-8 object-contain" alt="HCT" onerror="this.src='assets/img/clients/HCT original.png'">
+        <img src="assets/img/Case studies/Logos/space42 original.png" class="h-6 object-contain" alt="SPACE42" onerror="this.src='assets/img/clients/space42 original.png'">
+        <img src="assets/img/Case studies/Logos/UAESA original.png" class="h-12 object-contain" alt="UAE Space Agency" onerror="this.src='assets/img/clients/UAESA original.png'">
+        <div class="flex items-center justify-center">
+           <img src="assets/img/Case studies/Logos/AGF original.png" class="h-16 object-contain" alt="Takween" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        </div>
+        <img src="assets/img/Case studies/Logos/MBR (1).png" alt="MBR Space Centre" class="h-14 object-contain">
+        <img src="assets/img/Case studies/Logos/Gitex logo.png" alt="Gitex Global" class="h-10 object-contain brightness-0 invert">
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ MISSIONS/CARDS ════════════════ -->
+  <section class="py-20 px-6 lg:px-8 relative z-10 bg-space-dark" id="missions">
+    <div class="max-w-7xl mx-auto">
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in">
+        <button class="px-5 py-2.5 rounded-full bg-space-purple hover:bg-space-accent text-white font-semibold text-sm transition-colors shadow-[0_0_15px_rgba(167,125,255,0.4)]">All Missions</button>
+        <button class="px-5 py-2.5 rounded-full border border-space-purple/40 text-space-light hover:bg-space-purple/30 hover:text-white transition-colors text-sm font-medium">Government Initiatives</button>
+        <button class="px-5 py-2.5 rounded-full border border-space-purple/40 text-space-light hover:bg-space-purple/30 hover:text-white transition-colors text-sm font-medium">Universities</button>
+        <button class="px-5 py-2.5 rounded-full border border-space-purple/40 text-space-light hover:bg-space-purple/30 hover:text-white transition-colors text-sm font-medium">National Programs</button>
+        <button class="px-5 py-2.5 rounded-full border border-space-purple/40 text-space-light hover:bg-space-purple/30 hover:text-white transition-colors text-sm font-medium">Challenges & Competitions</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <!-- HCT Card -->
+        <div class="glass border border-space-purple/30 rounded-2xl overflow-hidden flex flex-col transition-transform hover:-translate-y-2 hover:border-space-accent/50 group fade-in" style="transition-delay: 0.1s;">
+          <div class="h-52 relative overflow-hidden">
+            <img src="assets/img/Case studies/Cards Images/HCT.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0510] via-transparent to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-5 bg-space-purple/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">University Program</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow bg-[#0B0510]">
+            <h3 class="font-outfit font-bold text-xl text-white mb-3">HCT Satellite Program</h3>
+            <p class="text-space-light text-sm mb-6 leading-relaxed">Students developed advanced payloads and tested materials for satellite structures using SatKit.</p>
+            <div class="flex items-center gap-6 mt-auto border-t border-space-purple/20 pt-5">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">50</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Students</div>
+                </div>
+              </div>
+              <div class="w-px h-8 bg-space-purple/30"></div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">10</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Teams</div>
+                </div>
+              </div>
+            </div>
+            <button class="mt-6 flex items-center justify-between text-space-accent hover:text-white transition-colors text-sm font-semibold w-full group/btn" onclick="openGallery('hct')">
+              View Mission
+              <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Space42 Card -->
+        <div class="glass border border-space-purple/30 rounded-2xl overflow-hidden flex flex-col transition-transform hover:-translate-y-2 hover:border-space-accent/50 group fade-in" style="transition-delay: 0.2s;">
+          <div class="h-52 relative overflow-hidden">
+            <img src="assets/img/Case studies/Cards Images/Space42.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0510] via-transparent to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-5 bg-blue-600/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">Government Initiative</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow bg-[#0B0510]">
+            <h3 class="font-outfit font-bold text-xl text-white mb-3">SpaceTech Educational Roadshow</h3>
+            <p class="text-space-light text-sm mb-6 leading-relaxed">A national roadshow inspiring students through interactive space education sessions.</p>
+            <div class="flex items-center gap-6 mt-auto border-t border-space-purple/20 pt-5">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">320</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Students</div>
+                </div>
+              </div>
+              <div class="w-px h-8 bg-space-purple/30"></div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">8</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Schools</div>
+                </div>
+              </div>
+            </div>
+            <button class="mt-6 flex items-center justify-between text-space-accent hover:text-white transition-colors text-sm font-semibold w-full group/btn" onclick="openGallery('space42')">
+              View Mission
+              <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Takween Card -->
+        <div class="glass border border-space-purple/30 rounded-2xl overflow-hidden flex flex-col transition-transform hover:-translate-y-2 hover:border-space-accent/50 group fade-in" style="transition-delay: 0.3s;">
+          <div class="h-52 relative overflow-hidden">
+            <img src="assets/img/Case studies/Cards Images/AGF.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0510] via-transparent to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-5 bg-green-600/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">National Program</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow bg-[#0B0510]">
+            <h3 class="font-outfit font-bold text-xl text-white mb-3">Satellite Development Course</h3>
+            <p class="text-space-light text-sm mb-6 leading-relaxed">Hands-on space education where students build and develop their own satellites.</p>
+            <div class="flex items-center gap-6 mt-auto border-t border-space-purple/20 pt-5">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">280 / 520</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Students Trained</div>
+                </div>
+              </div>
+            </div>
+            <button class="mt-6 flex items-center justify-between text-space-accent hover:text-white transition-colors text-sm font-semibold w-full group/btn" onclick="openGallery('agf')">
+              View Mission
+              <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Planet X Card -->
+        <div class="glass border border-space-purple/30 rounded-2xl overflow-hidden flex flex-col transition-transform hover:-translate-y-2 hover:border-space-accent/50 group fade-in" style="transition-delay: 0.4s;">
+          <div class="h-52 relative overflow-hidden">
+            <img src="assets/img/Case studies/Cards Images/PlanetX.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0510] via-transparent to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-5 bg-orange-500/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">Challenge</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow bg-[#0B0510]">
+            <h3 class="font-outfit font-bold text-xl text-white mb-3">Planet X – Lander Design Challenge</h3>
+            <p class="text-space-light text-sm mb-6 leading-relaxed">A national space engineering challenge in collaboration with the UAE Space Agency.</p>
+            <div class="flex items-center gap-6 mt-auto border-t border-space-purple/20 pt-5">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">464</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Participants</div>
+                </div>
+              </div>
+              <div class="w-px h-8 bg-space-purple/30"></div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <div>
+                  <div class="text-white font-bold text-base leading-none mb-1">93</div>
+                  <div class="text-space-light text-[10px] uppercase font-semibold">Teams</div>
+                </div>
+              </div>
+            </div>
+            <button class="mt-6 flex items-center justify-between text-space-accent hover:text-white transition-colors text-sm font-semibold w-full group/btn" onclick="openGallery('planetx')">
+              View Mission
+              <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FEATURED MISSION: PLANET X ════════════════ -->
+  <section class="py-24 px-6 lg:px-8 relative z-10 bg-space-dark overflow-hidden">
+    <!-- Starburst effect behind featured section -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-space-purple/10 rounded-full blur-[120px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="glass border border-space-purple/40 rounded-[2.5rem] p-8 lg:p-14 shadow-2xl relative overflow-hidden fade-in">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-space-accent/10 rounded-bl-full pointer-events-none blur-3xl"></div>
+        
+        <p class="text-space-accent text-sm font-semibold uppercase tracking-widest mb-6 flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Featured Mission
+        </p>
+        <h2 class="font-outfit font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">Planet X – Lander Design Challenge</h2>
+        
+        <div class="flex flex-wrap items-center gap-4 mb-12 bg-[#0B0510]/50 inline-flex p-4 rounded-2xl border border-space-purple/20">
+          <span class="text-space-light text-sm font-medium pr-2">In collaboration with</span>
+          <img src="assets/img/Case studies/Logos/PlanetX Logo.png" class="h-8 object-contain">
+          <div class="w-px h-6 bg-space-purple/30"></div>
+          <div class="flex items-center gap-2">
+            <img src="assets/img/Case studies/Logos/MBR (1).png" class="h-10 object-contain">
+          </div>
+        </div>
+        
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-7">
+            <p class="text-space-light text-lg md:text-xl mb-10 leading-relaxed font-light">
+              A National Space Engineering Experience delivered by SpacePoint in collaboration with the UAE Space Agency, aligned with the Emirates Mission to the Asteroid Belt (EMA). 
+              <br><br>
+              Delivered through an intensive 2-Week Bootcamp where students designed, built & launched a CubeSat Lander.
+            </p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-space-purple-dark/50 p-6 rounded-2xl border border-space-purple/20 mb-10 shadow-inner">
+              <div class="text-center p-3">
+                <div class="text-white font-outfit font-extrabold text-3xl mb-1">464</div>
+                <div class="text-space-accent text-[10px] uppercase tracking-widest font-semibold">Participants</div>
+              </div>
+              <div class="text-center p-3 border-l border-space-purple/20">
+                <div class="text-white font-outfit font-extrabold text-3xl mb-1">93</div>
+                <div class="text-space-accent text-[10px] uppercase tracking-widest font-semibold">Teams</div>
+              </div>
+              <div class="text-center p-3 border-t sm:border-t-0 sm:border-l border-space-purple/20">
+                <div class="text-white font-outfit font-extrabold text-3xl mb-1">48</div>
+                <div class="text-space-accent text-[10px] uppercase tracking-widest font-semibold">Prototypes</div>
+              </div>
+              <div class="text-center p-3 border-t sm:border-t-0 border-l border-space-purple/20">
+                <div class="text-white font-outfit font-extrabold text-3xl mb-1">24</div>
+                <div class="text-space-accent text-[10px] uppercase tracking-widest font-semibold">Universities</div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="text-white font-outfit font-bold mb-5 text-xl">Impact & Visibility</h4>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 bg-[#0B0510]/50 p-4 rounded-xl border border-space-purple/10">
+                  <div class="w-8 h-8 rounded-full bg-space-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-lg">23,000+</div>
+                    <div class="text-space-light text-xs">views on day 4 alone</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 bg-[#0B0510]/50 p-4 rounded-xl border border-space-purple/10">
+                  <div class="w-8 h-8 rounded-full bg-space-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-lg">1.7M+</div>
+                    <div class="text-space-light text-xs">views from content creators</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 bg-[#0B0510]/50 p-4 rounded-xl border border-space-purple/10">
+                  <div class="w-8 h-8 rounded-full bg-space-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-lg">85%</div>
+                    <div class="text-space-light text-xs">reach from non-followers</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 bg-[#0B0510]/50 p-4 rounded-xl border border-space-purple/10">
+                  <div class="w-8 h-8 rounded-full bg-space-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-space-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-lg">83%</div>
+                    <div class="text-space-light text-xs">engagement rate on LinkedIn</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-5 flex flex-col gap-6">
+             <div class="grid grid-cols-2 gap-4">
+                <div class="relative group rounded-2xl overflow-hidden aspect-square shadow-lg cursor-pointer" onclick="openGallery('planetx', 0)">
+                  <img src="assets/img/Case studies/PLANETX/Planet1.jpg" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-space-accent/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <svg class="w-8 h-8 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden aspect-square shadow-lg cursor-pointer" onclick="openGallery('planetx', 1)">
+                  <img src="assets/img/Case studies/PLANETX/Planet5.jpg" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-space-accent/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <svg class="w-8 h-8 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden aspect-square shadow-lg cursor-pointer" onclick="openGallery('planetx', 2)">
+                  <img src="assets/img/Case studies/PLANETX/Planet6.jpg" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-space-accent/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <svg class="w-8 h-8 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </div>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden aspect-square shadow-lg cursor-pointer" onclick="openGallery('planetx', 3)">
+                  <img src="assets/img/Case studies/PLANETX/PlanetX4.jpg" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-space-dark/60 opacity-100 group-hover:bg-space-accent/20 transition-colors flex flex-col items-center justify-center backdrop-blur-sm">
+                    <span class="text-white font-outfit font-bold text-2xl">+3</span>
+                    <span class="text-space-light text-xs font-semibold uppercase tracking-widest mt-1">Photos</span>
+                  </div>
+                </div>
+             </div>
+             
+             <button class="btn-primary w-full px-8 py-4 rounded-xl text-white font-semibold text-base flex items-center justify-center gap-3 mt-2 shadow-[0_0_20px_rgba(167,125,255,0.3)] hover:shadow-[0_0_30px_rgba(167,125,255,0.5)] transition-all" onclick="openGallery('planetx')">
+               Open Gallery <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ IMPACT MAP ════════════════ -->
+  <section class="py-24 px-6 lg:px-8 relative z-10 bg-[#0B0510] border-t border-space-purple/20">
+     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center fade-in">
+        <div class="order-2 md:order-1 relative w-full aspect-[4/3] bg-space-purple-dark/20 border border-space-purple/20 rounded-[2.5rem] flex items-center justify-center shadow-[0_0_40px_rgba(167,125,255,0.1)] overflow-hidden">
+            <!-- Grid background -->
+            <div class="absolute inset-0" style="background-image: radial-gradient(rgba(167, 125, 255, 0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <img src="assets/img/SpacePoint logo.png" class="absolute w-64 opacity-5 blur-sm" alt="Map outline">
+            
+            <div class="relative z-10 w-full h-full flex items-center justify-center">
+              <svg class="w-full h-full opacity-40 px-12" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(0,1024) scale(0.1,-0.1)" fill="#653F84" fill-opacity="0.5" stroke="#A77DFF" stroke-width="20">
+<path d="M9695 9007 c-66 -149 -178 -364 -201 -388 -23 -24 -25 -31 -14 -44 10 -12 6 -22 -26 -57 -21 -24 -47 -46 -58 -50 -45 -14 -49 -7 -18 25 21 22 33 46 38 77 l7 45 -102 -95 c-107 -99 -134 -120 -164 -120 -9 0 -99 -69 -199 -152 -99 -84 -193 -163 -207 -175 -25 -20 -25 -22 -9 -40 32 -35 13 -59 -74 -93 -44 -16 -82 -30 -84 -30 -3 0 3 14 11 30 15 28 14 31 -2 37 -10 3 -21 8 -25 10 -4 2 -20 -16 -36 -39 -19 -27 -53 -56 -91 -78 -69 -40 -80 -57 -51 -77 20 -14 20 -15 -11 -54 -17 -21 -34 -51 -38 -65 l-7 -26 -23 20 -24 19 -28 -31 c-17 -20 -30 -49 -34 -81 -11 -68 -65 -113 -80 -65 -3 11 -9 20 -13 20 -12 -1 -137 -168 -140 -189 -3 -17 -9 -19 -56 -14 l-52 5 -48 -56 c-27 -31 -78 -78 -115 -105 -78 -58 -316 -297 -325 -326 -5 -16 -29 -27 -103 -50 -89 -26 -105 -34 -168 -90 -38 -34 -116 -95 -172 -134 -99 -70 -120 -95 -88 -107 16 -6 20 -51 7 -70 -4 -6 -20 -15 -37 -21 -26 -8 -30 -15 -33 -52 -3 -33 -7 -41 -18 -37 -9 3 -18 6 -20 6 -2 0 -4 15 -4 34 0 28 -5 36 -30 46 -27 11 -37 9 -93 -15 -82 -36 -107 -52 -107 -70 0 -10 11 -15 35 -15 42 0 44 -8 10 -40 -14 -13 -25 -29 -25 -35 0 -7 -9 -20 -20 -30 -24 -21 -26 -58 -5 -75 19 -16 10 -30 -21 -30 -20 0 -24 -5 -24 -30 0 -25 -6 -32 -36 -45 -33 -13 -36 -18 -31 -44 5 -22 -1 -38 -23 -67 -16 -22 -30 -51 -30 -66 0 -26 -3 -28 -40 -28 -46 0 -49 -9 -15 -53 l24 -33 -37 -62 c-20 -34 -42 -62 -49 -62 -7 0 -13 -7 -13 -15 0 -10 -10 -15 -31 -15 -17 0 -38 -4 -48 -10 -23 -12 -69 11 -133 64 -55 46 -64 79 -56 196 3 29 0 35 -17 35 -23 0 -85 -96 -85 -132 0 -18 -6 -23 -26 -23 -40 0 -64 -18 -64 -47 0 -25 2 -25 49 -21 49 5 51 4 98 -44 29 -30 79 -66 126 -89 60 -31 77 -44 77 -61 0 -12 7 -29 16 -39 21 -24 0 -59 -36 -59 -19 0 -35 -11 -55 -39 l-30 -39 -101 -4 c-90 -3 -106 -6 -142 -31 -46 -30 -112 -36 -173 -16 -48 16 -139 107 -139 138 0 13 -7 32 -16 42 -15 17 -18 17 -60 -4 -51 -25 -60 -54 -16 -59 21 -2 28 -9 30 -30 2 -16 9 -28 17 -28 7 0 20 -11 29 -25 22 -34 4 -65 -40 -65 -18 0 -46 -12 -70 -30 -21 -16 -50 -30 -63 -30 -13 0 -45 -12 -70 -27 -33 -20 -66 -30 -116 -34 -76 -8 -154 -28 -176 -45 -10 -8 -37 -9 -93 -2 -54 7 -82 6 -89 -1 -6 -6 -44 -11 -84 -11 -65 0 -77 3 -96 24 l-22 23 -200 -13 -199 -13 -43 25 c-23 13 -48 35 -54 47 -7 12 -13 23 -14 25 -1 1 -39 -7 -84 -18 l-81 -21 -41 23 c-32 18 -42 20 -48 9 -7 -11 -25 -11 -97 -2 -149 18 -183 33 -223 94 -57 90 -142 127 -149 65 -3 -23 -13 -30 -73 -53 -77 -30 -99 -28 -99 8 0 33 -22 49 -81 58 -39 6 -58 4 -84 -8 -30 -14 -39 -15 -77 -3 -24 8 -54 13 -68 12 -19 -2 -30 5 -44 28 -10 17 -23 29 -29 26 -50 -21 -91 -28 -129 -22 -37 6 -46 11 -55 36 -15 41 -60 41 -105 1 -35 -30 -58 -31 -58 -1 0 11 -19 32 -47 51 -27 18 -64 47 -84 66 -31 30 -42 34 -67 28 -26 -5 -33 -14 -54 -73 l-23 -67 -81 -29 c-76 -27 -83 -32 -103 -73 -19 -40 -24 -43 -59 -43 -32 0 -54 -11 -127 -66 -48 -37 -90 -75 -92 -85 -4 -13 -14 -19 -34 -19 -16 0 -57 -14 -90 -31 -58 -29 -66 -30 -143 -24 -104 8 -221 8 -268 1 -33 -5 -38 -3 -57 29 -20 35 -21 35 -91 35 -45 0 -82 6 -102 16 -19 10 -42 14 -60 10 -43 -9 -94 14 -188 83 l-85 62 -17 142 -17 142 21 22 c19 20 20 26 9 50 -11 23 -10 29 3 39 12 8 16 29 16 84 0 71 -1 73 -40 112 -21 22 -44 37 -49 34 -5 -4 -13 -42 -17 -86 -6 -69 -9 -80 -25 -80 -14 0 -19 7 -19 25 0 14 -12 54 -26 91 -32 78 -49 73 -49 -16 0 -32 -2 -60 -5 -63 -3 -2 -22 -8 -44 -11 l-38 -7 8 68 c13 103 6 241 -15 281 l-18 34 -13 -31 c-10 -24 -10 -34 -1 -45 10 -11 9 -21 -3 -45 -9 -16 -16 -48 -16 -70 0 -38 -3 -42 -48 -65 l-48 -24 -43 -139 -43 -138 882 -1540 c486 -847 885 -1543 889 -1547 3 -4 1096 -282 2428 -619 l2422 -611 275 173 c235 147 277 177 285 203 6 17 13 114 16 216 l6 185 75 305 75 305 133 140 c129 137 135 144 254 355 l122 216 70 23 c90 29 94 37 84 193 l-6 117 37 45 37 45 9 141 c7 100 16 154 30 186 10 25 19 49 19 54 0 4 -36 34 -80 66 -85 61 -89 68 -74 141 6 30 11 32 291 128 l286 98 114 -57 114 -56 62 16 c43 11 81 14 123 10 l62 -6 52 65 51 65 -36 59 c-23 37 -48 64 -66 71 -35 15 -45 44 -26 74 8 12 17 33 19 47 3 27 6 27 -177 8 -84 -8 -92 -7 -120 13 -95 69 -114 84 -115 89 0 3 43 54 96 113 l96 107 10 80 c9 77 9 80 -20 132 -28 49 -30 60 -36 201 l-6 148 62 144 61 144 -56 217 -57 218 67 61 68 62 174 46 c95 26 176 45 179 42 4 -5 92 -207 92 -213 0 -3 -73 -23 -85 -23 -6 0 -19 13 -28 30 -16 26 -20 28 -42 18 l-25 -11 82 -160 82 -160 -56 -51 -56 -51 17 -60 c17 -58 19 -60 57 -67 85 -15 106 -10 149 32 l40 39 46 -29 46 -28 56 46 c51 42 58 53 67 102 6 30 13 62 16 71 3 9 44 43 92 74 78 52 92 65 124 124 34 64 35 68 26 122 -9 53 -8 59 19 98 27 41 29 42 76 38 26 -2 47 -1 47 3 0 4 -11 32 -24 61 l-23 54 34 150 c29 127 35 172 37 291 l2 142 46 73 c51 81 52 111 4 117 -14 2 -26 6 -26 10 0 14 39 66 65 86 l27 22 -21 42 -22 43 21 107 c20 105 25 197 14 238 -7 27 -95 56 -145 48 -32 -5 -38 -2 -62 30 l-28 35 -47 -18 c-40 -16 -47 -23 -50 -50 -2 -21 -15 -40 -40 -61 -20 -16 -40 -30 -44 -30 -5 0 -26 11 -47 24 l-39 25 -7 85 -7 85 56 108 c67 131 82 203 92 446 l7 168 -77 79 -77 79 -24 -52z"/>
+<path d="M2238 5746 c-23 -32 -23 -63 3 -139 24 -73 35 -87 44 -58 4 15 15 21 35 21 19 0 36 10 54 31 30 36 29 49 -13 119 -24 40 -32 45 -67 48 -32 2 -42 -3 -56 -22z"/>
+<path d="M4730 5365 c-13 -14 -33 -25 -44 -25 -12 -1 -32 -7 -46 -15 -14 -8 -52 -14 -87 -15 -52 0 -76 -7 -150 -43 -114 -55 -113 -55 -106 -72 4 -11 23 -15 79 -15 70 0 73 -1 91 -30 20 -34 25 -36 110 -45 77 -8 112 10 111 57 -1 19 6 36 17 44 25 19 39 18 59 -5 15 -16 15 -19 1 -31 -24 -20 -18 -40 13 -40 16 0 37 -7 48 -15 26 -20 34 -19 34 5 0 19 1 19 33 4 31 -15 35 -15 70 6 35 21 38 26 35 63 -3 40 -3 41 -57 53 -107 24 -197 84 -126 84 31 0 32 10 2 38 -31 29 -58 28 -87 -3z"/>
+                </g>
+              </svg>
+              
+              <!-- Glowing Pins -->
+              <div class="absolute top-[45%] left-[55%] flex flex-col items-center group cursor-pointer">
+                <div class="w-4 h-4 bg-space-accent rounded-full shadow-[0_0_20px_#A77DFF] animate-pulse"></div>
+                <div class="absolute -top-10 bg-space-dark border border-space-purple/40 px-3 py-1 rounded-lg text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-1">Dubai</div>
+              </div>
+              <div class="absolute top-[55%] left-[40%] flex flex-col items-center group cursor-pointer">
+                <div class="w-5 h-5 bg-space-accent rounded-full shadow-[0_0_25px_#A77DFF] animate-pulse" style="animation-delay: 0.2s;"></div>
+                <div class="absolute -top-10 bg-space-dark border border-space-purple/40 px-3 py-1 rounded-lg text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-1">Abu Dhabi</div>
+              </div>
+              <div class="absolute top-[40%] left-[62%] flex flex-col items-center group cursor-pointer">
+                <div class="w-3 h-3 bg-space-accent rounded-full shadow-[0_0_15px_#A77DFF] animate-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="absolute -top-10 bg-space-dark border border-space-purple/40 px-3 py-1 rounded-lg text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-1">Sharjah</div>
+              </div>
+              <div class="absolute top-[50%] left-[75%] flex flex-col items-center group cursor-pointer">
+                <div class="w-4 h-4 bg-space-accent rounded-full shadow-[0_0_20px_#A77DFF] animate-pulse" style="animation-delay: 0.8s;"></div>
+                <div class="absolute -top-10 bg-space-dark border border-space-purple/40 px-3 py-1 rounded-lg text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-1">Al Ain</div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="order-1 md:order-2">
+           <div class="flex items-center gap-3 mb-4">
+             <div class="w-6 h-0.5 bg-space-accent rounded"></div>
+             <span class="text-space-accent text-sm font-semibold uppercase tracking-widest">Making an Impact</span>
+           </div>
+           <h2 class="font-outfit font-extrabold text-4xl sm:text-5xl text-white mb-6">Across the UAE</h2>
+           <p class="text-space-light text-lg mb-10 leading-relaxed max-w-lg">
+             Delivering space education programs across universities, schools and institutions nationwide. We've brought the space industry to the classrooms of the next generation.
+           </p>
+           <a href="index.html#globeViz" class="btn-secondary inline-flex px-8 py-3.5 rounded-full text-white font-medium text-base items-center gap-3 border border-space-purple/50 hover:bg-space-purple/20 transition-colors">
+             Explore on Globe <svg class="w-5 h-5 text-space-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+           </a>
+        </div>
+     </div>
+  </section>
+
+  <!-- ════════════════ BOTTOM CTA ════════════════ -->
+  <section class="py-24 px-6 lg:px-8 relative z-10 bg-space-dark border-t border-space-purple/20">
+    <div class="absolute inset-0 bg-[url('assets/img/Case studies/earth_pic.jpg')] bg-cover bg-center opacity-10 mix-blend-screen"></div>
+    <div class="max-w-4xl mx-auto text-center glass border border-space-purple/40 rounded-[2.5rem] p-12 sm:p-16 shadow-2xl relative overflow-hidden fade-in">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-32 bg-space-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <h2 class="font-outfit font-extrabold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">Let's Build the<br><span class="text-space-accent">Next Mission</span></h2>
+      <p class="text-space-light text-lg mb-10 max-w-xl mx-auto">
+        Partner with SpacePoint to inspire the next generation of space innovators in the UAE and beyond.
+      </p>
+      <a href="book-workshop.html" class="btn-primary inline-flex px-10 py-4 rounded-full text-white font-bold text-lg items-center gap-3 shadow-[0_0_20px_rgba(167,125,255,0.4)] hover:shadow-[0_0_30px_rgba(167,125,255,0.6)] transition-all transform hover:-translate-y-1">
+        Start a Mission <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- GALLERY MODAL -->
+<div class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="galleryModal" style="z-index: 9999;">
+  <div class="absolute inset-0 bg-[#05030A]/95 backdrop-blur-md" onclick="closeGallery()"></div>
+  <div class="relative w-full h-full p-4 md:p-8 z-10 flex items-center justify-center" id="galleryContent">
+    <button class="absolute top-6 right-6 text-space-light hover:text-white transition-colors bg-[#0B0510]/50 p-3 rounded-full border border-space-purple/30 z-50 backdrop-blur-sm" onclick="closeGallery()">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    
+    <button onclick="prevImage()" class="absolute left-2 md:left-6 lg:left-12 z-20 p-3 md:p-4 text-white bg-[#0B0510]/60 backdrop-blur-md border border-space-purple/30 rounded-full hover:bg-space-accent hover:border-space-accent transition-all transform hover:-translate-x-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    
+    <img id="galleryMainImage" src="" class="max-h-[90dvh] max-w-[85vw] rounded-2xl object-contain shadow-2xl transition-opacity duration-300">
+    
+    <button onclick="nextImage()" class="absolute right-2 md:right-6 lg:right-12 z-20 p-3 md:p-4 text-white bg-[#0B0510]/60 backdrop-blur-md border border-space-purple/30 rounded-full hover:bg-space-accent hover:border-space-accent transition-all transform hover:translate-x-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const galleries = {
+    'planetx': [
+      'assets/img/Case studies/PLANETX/Planet1.jpg',
+      'assets/img/Case studies/PLANETX/Planet5.jpg',
+      'assets/img/Case studies/PLANETX/Planet6.jpg',
+      'assets/img/Case studies/PLANETX/Planet7.jpg',
+      'assets/img/Case studies/PLANETX/PlanetX 2.jpg',
+      'assets/img/Case studies/PLANETX/PlanetX 3.jpg',
+      'assets/img/Case studies/PLANETX/PlanetX4.jpg'
+    ],
+    'agf': [
+      'assets/img/Case studies/AGF/AGF 1.jpg',
+      'assets/img/Case studies/AGF/AGF 2.jpg',
+      'assets/img/Case studies/AGF/AGF 3.jpg',
+      'assets/img/Case studies/AGF/AGF 4.jpg',
+      'assets/img/Case studies/AGF/AGF 5.jpg',
+      'assets/img/Case studies/AGF/AGF 6.jpg',
+      'assets/img/Case studies/AGF/AGF 7.jpg',
+      'assets/img/Case studies/AGF/AGF 8.jpg'
+    ],
+    'hct': [
+      'assets/img/Case studies/HCT/HCT 1.jpg',
+      'assets/img/Case studies/HCT/HCT2.jpg',
+      'assets/img/Case studies/HCT/HCT3.jpg',
+      'assets/img/Case studies/HCT/HCT4.jpg'
+    ],
+    'space42': [
+      'assets/img/Case studies/Cards Images/Space42.jpg'
+    ]
+  };
+
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  function openGallery(key, index = 0) {
+    if(!galleries[key] || galleries[key].length === 0) return;
+    currentGallery = galleries[key];
+    currentIndex = index;
+    
+    document.getElementById('galleryModal').classList.remove('pointer-events-none', 'opacity-0');
+    document.body.style.overflow = 'hidden';
+    updateGalleryView();
+  }
+
+  function closeGallery() {
+    document.getElementById('galleryModal').classList.add('pointer-events-none', 'opacity-0');
+    document.body.style.overflow = '';
+  }
+
+  function nextImage() {
+    const mainImg = document.getElementById('galleryMainImage');
+    mainImg.style.opacity = '0.4';
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      updateGalleryView();
+      mainImg.style.opacity = '1';
+    }, 150);
+  }
+
+  function prevImage() {
+    const mainImg = document.getElementById('galleryMainImage');
+    mainImg.style.opacity = '0.4';
+    setTimeout(() => {
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      updateGalleryView();
+      mainImg.style.opacity = '1';
+    }, 150);
+  }
+
+  function updateGalleryView() {
+    const mainImg = document.getElementById('galleryMainImage');
+    mainImg.src = currentGallery[currentIndex];
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('galleryModal').classList.contains('opacity-0')) {
+      if (e.key === 'Escape') closeGallery();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    }
+  });
+</script>
+
+<!-- ════════════════ FOOTER & CONTACT ════════════════ -->
+  <footer class="relative z-10 bg-[#0B0510] pt-20 pb-8 border-t border-space-purple/20 overflow-hidden" id="contact">
+    <!-- Subtle background glow -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-64 bg-space-purple opacity-5 blur-[100px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand & About -->
+        <div>
+          <a class="inline-block mb-6" href="index.html">
+            <img alt="SpacePoint Logo" class="h-10 w-auto" src="assets/img/SpacePoint logo.png"/>
+          </a>
+          <p class="text-space-light text-sm leading-relaxed mb-6">
+            Empowering the next generation of space explorers, innovators, and engineers through hands-on satellite education and mission experiences.
+          </p>
+        </div>
+        <!-- Contact Information -->
+        <div>
+          <h4 class="font-semibold text-white tracking-widest uppercase text-sm mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-sm text-space-light">
+            <li class="flex items-start gap-3 group">
+              <svg class="w-5 h-5 text-space-accent flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              </svg>
+              <a class="hover:text-space-accent transition-colors" href="mailto:info@spacepoint.ae">info@spacepoint.ae</a>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <svg class="w-5 h-5 text-space-accent flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              </svg>
+              <div class="flex flex-col gap-1">
+                <a class="hover:text-space-accent transition-colors" href="tel:+971562987005">+971 56 298 7005</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Legal Links -->
+        <div>
+          <h4 class="font-semibold text-white tracking-widest uppercase text-sm mb-6">Legal</h4>
+          <ul class="space-y-3 text-sm text-space-light">
+            <li><a class="hover:text-space-accent transition-colors cursor-pointer" id="footerTerms">Terms of Service</a></li>
+            <li><a class="hover:text-space-accent transition-colors cursor-pointer" id="footerPrivacy">Privacy Policy</a></li>
+            <li><a class="hover:text-space-accent transition-colors" href="#">Shipping Policy</a></li>
+          </ul>
+        </div>
+        <!-- Social Media -->
+        <div>
+          <h4 class="font-semibold text-white tracking-widest uppercase text-sm mb-6">Follow Our Mission</h4>
+          <div class="flex gap-4">
+            <a aria-label="Instagram" class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-light hover:bg-space-accent hover:text-white hover:border-space-accent transition-all duration-300" href="https://www.instagram.com/spacepoint.ae" target="_blank">
+              <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-light hover:bg-space-accent hover:text-white hover:border-space-accent transition-all duration-300" href="https://www.linkedin.com/company/spacepointae/posts/?feedView=all" target="_blank">
+              <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a aria-label="TikTok" class="w-10 h-10 rounded-full bg-space-purple/10 border border-space-purple/30 flex items-center justify-center text-space-light hover:bg-space-accent hover:text-white hover:border-space-accent transition-all duration-300" href="#">
+              <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c-.01 2.68-1.07 5.3-3.03 7.15-2.14 2.01-5.26 2.87-8.1 2.03-2.61-.77-4.73-2.75-5.59-5.34-.84-2.52-.39-5.35 1.18-7.51 1.53-2.12 4-3.52 6.55-3.87v4.13c-1.3.16-2.55.85-3.35 1.9-.76 1.01-1 2.33-.63 3.55.35 1.14 1.18 2.08 2.24 2.54 1.05.46 2.29.46 3.35.03 1.05-.43 1.9-1.26 2.3-2.33.26-.69.34-1.44.34-2.17v-15.34h4.08c-.01 0 0 0-.01 0z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Copyright -->
+      <div class="border-t border-space-purple/30 pt-8 mt-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-space-light/60 text-xs tracking-wider">© copyright SpacePoint 2026. All rights reserved.</p>
+        <div class="flex items-center gap-2 text-space-light/60 text-xs">
+          <span>Built for Explorers</span>
+          <svg class="w-3 h-3 text-space-accent" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- ════════════════ LEGAL MODALS ════════════════ -->
+  <!-- Terms Modal -->
+  <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="termsModal">
+    <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="termsOverlay"></div>
+    <div class="relative glass border border-space-purple/40 rounded-3xl w-[95%] max-w-4xl max-h-[85vh] overflow-hidden transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col shadow-2xl" id="termsContent">
+      <div class="p-6 border-b border-space-purple/20 flex items-center justify-between bg-space-dark/50">
+        <h3 class="font-outfit font-extrabold text-2xl text-white">Terms & <span class="text-space-accent">Conditions</span></h3>
+        <button class="p-2 text-space-light hover:text-white transition-colors focus:outline-none" id="termsClose">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-12 overflow-y-auto text-space-light/80 text-sm leading-relaxed font-inter custom-scrollbar">
+        <div class="space-y-8">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-space-purple/10 border border-space-purple/20">
+            <div class="w-12 h-12 rounded-xl bg-space-accent/20 flex items-center justify-center text-space-accent">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-space-accent font-bold">Last Updated</p>
+              <p class="text-white font-semibold">April 1, 2026</p>
+            </div>
+          </div>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">1.</span> Introduction
+            </h4>
+            <p>Welcome to SpacePoint. By accessing our website, programs, or services—including SatKit, workshops, and training, you agree to these Terms & Conditions.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">2.</span> Eligibility
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Our programs are designed for students, educators, and institutions.</li>
+              <li>Participants under 18 require parental or institutional consent.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">3.</span> Our Services
+            </h4>
+            <p class="mb-4">SpacePoint provides:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Satellite development programs (online, onsite, hybrid)</li>
+              <li>Hands-on kits (e.g., SatKit)</li>
+              <li>Workshops, camps, and training sessions</li>
+              <li>Instructor training and certifications</li>
+            </ul>
+            <p class="mt-4 italic">We may update or modify our services at any time.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">4.</span> Program Delivery
+            </h4>
+            <p class="mb-4">SpacePoint programs may be delivered in one of the following formats:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Online:</strong> Virtual sessions</li>
+              <li><strong>Onsite:</strong> In-person at schools, events, or partner locations</li>
+              <li><strong>Hybrid:</strong> Combination of both</li>
+            </ul>
+            <p class="mt-4">The delivery mode will be communicated before the program starts.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">5.</span> Online Participation
+            </h4>
+            <p class="mb-4">Participants are responsible for having:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>A stable internet connection</li>
+              <li>A suitable device (laptop or tablet)</li>
+            </ul>
+            <p class="mt-4 mb-4 font-semibold text-white">SpacePoint is not responsible for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Connectivity issues</li>
+              <li>Device malfunctions</li>
+              <li>Third-party platform disruptions</li>
+            </ul>
+            <p class="mt-4 italic">Sessions may be recorded for quality, training, or educational purposes.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">6.</span> Onsite Participation
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Participants must follow all safety instructions and use equipment responsibly.</li>
+              <li>Any misuse or negligence resulting in damage may result in charges.</li>
+              <li><strong>For institutional programs:</strong> The hosting organization is responsible for general supervision outside session delivery.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">7.</span> Registration & Accounts
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Users must provide accurate and complete information.</li>
+              <li>SpacePoint may suspend access for incorrect or misleading data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">8.</span> Payments
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Fees must be paid in advance unless otherwise agreed.</li>
+              <li>Pricing may vary depending on program type or partner agreements.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">9.</span> Refunds & Cancellations
+            </h4>
+            <p class="mb-4 font-semibold text-white">Refunds are only provided if:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>A program is canceled by SpacePoint</li>
+            </ul>
+            <p class="mb-4 font-semibold text-white">Refunds are not provided for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Missed sessions</li>
+              <li>Partial attendance</li>
+              <li>Withdrawal after program start</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">10.</span> Attendance & Scheduling
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Participants are expected to attend all sessions.</li>
+              <li>Missed sessions are not guaranteed to be rescheduled.</li>
+              <li>SpacePoint may reschedule sessions or assign alternative instructors if needed.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">11.</span> Intellectual Property
+            </h4>
+            <p class="mb-4">All materials, including SatKit, curriculum, content and documentation, are owned by SpacePoint and protected by law.</p>
+            <p>They may only be used for personal educational purposes and may not be copied, shared, or resold without permission.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">12.</span> Code of Conduct
+            </h4>
+            <p class="mb-4">Participants must respect instructors and peers, follow program guidelines, and use tools and equipment responsibly.</p>
+            <p>Violation may result in removal without refund.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">13.</span> Media & Recording
+            </h4>
+            <p class="mb-4">By participating in our programs, photos, videos, or recordings may be captured and used for educational or promotional purposes.</p>
+            <p>For minors, consent is assumed through parents, guardians, or institutions unless withdrawn in writing.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">14.</span> Limitation of Liability
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>SpacePoint is not liable for indirect or incidental damages.</li>
+              <li>Liability is limited to the amount paid for the service.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">15.</span> Governing Law
+            </h4>
+            <p>These Terms are governed by the laws of the United Arab Emirates.</p>
+          </section>
+        </div>
+      </div>
+      <div class="p-6 border-t border-space-purple/20 bg-space-dark/50 flex justify-end">
+        <button class="btn-primary text-white text-sm font-semibold px-8 py-2.5 rounded-full" id="termsAccept">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Modal (Using same structure) -->
+  <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="privacyModal">
+    <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="privacyOverlay"></div>
+    <div class="relative glass border border-space-purple/40 rounded-3xl w-[95%] max-w-4xl max-h-[85vh] overflow-hidden transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col shadow-2xl" id="privacyContent">
+      <div class="p-6 border-b border-space-purple/20 flex items-center justify-between bg-space-dark/50">
+        <h3 class="font-outfit font-extrabold text-2xl text-white">Privacy <span class="text-space-accent">Policy</span></h3>
+        <button class="p-2 text-space-light hover:text-white transition-colors focus:outline-none" id="privacyClose">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-12 overflow-y-auto text-space-light/80 text-sm leading-relaxed font-inter custom-scrollbar">
+        <div class="space-y-8">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-space-purple/10 border border-space-purple/20">
+            <div class="w-12 h-12 rounded-xl bg-space-accent/20 flex items-center justify-center text-space-accent">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-space-accent font-bold">SpacePoint FZC</p>
+              <p class="text-white font-semibold text-lg">Privacy Policy</p>
+            </div>
+          </div>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">1.</span> Introduction
+            </h4>
+            <p>At SpacePoint, we respect your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">2.</span> Information We Collect
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <p class="text-white font-semibold mb-2">a) Personal Information</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Name, email, phone number</li>
+                  <li>Age or educational level</li>
+                  <li>School or organization name</li>
+                  <li>Payment details (processed securely via third parties)</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-2">b) Program Data</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Course participation and performance</li>
+                  <li>Feedback and survey responses</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-semibold mb-2">c) Technical Data</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>IP address</li>
+                  <li>Device and browser type</li>
+                  <li>Website usage data (cookies, analytics)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">3.</span> How We Use Your Information
+            </h4>
+            <p class="mb-4">We use your data to:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Deliver programs and services</li>
+              <li>Communicate updates and schedules</li>
+              <li>Improve our curriculum and offerings</li>
+              <li>Provide certificates and reports</li>
+              <li>Ensure safety and program quality</li>
+            </ul>
+            <p class="font-semibold text-white mb-2">We may also use anonymized data for:</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Impact reporting</li>
+              <li>Research and program improvement</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">4.</span> Sharing of Information
+            </h4>
+            <p class="mb-4">We may share data with:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Partner institutions (schools, universities)</li>
+              <li>Program sponsors (when applicable)</li>
+              <li>Service providers (payment processors, platforms)</li>
+            </ul>
+            <p class="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 font-bold text-center uppercase tracking-widest text-xs">
+              We do NOT sell your personal data.
+            </p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">5.</span> Data Protection
+            </h4>
+            <p class="mb-4">We implement:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Secure data storage systems</li>
+              <li>Access control measures</li>
+              <li>Encryption where applicable</li>
+            </ul>
+            <p class="mt-4 italic">However, no system is 100% secure.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">6.</span> Data Retention
+            </h4>
+            <p class="mb-4">We retain data only as long as necessary for program delivery and legal or reporting requirements.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">7.</span> Program Delivery & Data Use
+            </h4>
+            <p class="mb-4">Depending on the program format (online, onsite, or hybrid), we may collect and process:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Session recordings (online programs)</li>
+              <li>Participation and attendance data</li>
+              <li>Photos/videos during onsite activities</li>
+            </ul>
+            <p class="font-semibold text-white mb-2">This data is used strictly for:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Program delivery and improvement</li>
+              <li>Certification and reporting</li>
+              <li>Marketing (where applicable)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">8.</span> Children’s Privacy
+            </h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>For users under 18: Data is collected with parental or institutional consent.</li>
+              <li>We take extra care in handling minors’ data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">9.</span> Your Rights
+            </h4>
+            <p class="mb-4 text-white font-semibold">You have the right to:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-4">
+              <li>Access your data</li>
+              <li>Request corrections</li>
+              <li>Request deletion (where applicable)</li>
+              <li>Withdraw consent</li>
+            </ul>
+            <p>To exercise these rights, contact us.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">10.</span> Cookies
+            </h4>
+            <p class="mb-4">We use cookies to improve user experience and analyze website performance. You can disable cookies in your browser settings.</p>
+          </section>
+
+          <section>
+            <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="text-space-accent">11.</span> Updates to This Policy
+            </h4>
+            <p>We may update this policy periodically. Changes will be reflected on this page.</p>
+          </section>
+        </div>
+      </div>
+      <div class="p-6 border-t border-space-purple/20 bg-space-dark/50 flex justify-end">
+        <button class="btn-primary text-white text-sm font-semibold px-8 py-2.5 rounded-full" id="privacyAccept">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    window.intercomSettings = {
+      api_base: "https://api-iam.intercom.io",
+      app_id: "hsw1zj8e",
+      action_color: "#A77DFF",
+      background_color: "#A77DFF",
+      hide_default_launcher: true,
+      horizontal_padding: 96,
+      vertical_padding: 32
+    };
+  </script>
+<script>
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/hsw1zj8e';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+  </script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
