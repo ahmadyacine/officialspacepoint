@@ -7,7 +7,7 @@ import re
 NAV_LINKS_HTML = """        <a href="index.html" class="nav-link hover:text-white transition-colors">Home</a>
         <a href="about.html" class="nav-link hover:text-white transition-colors">About</a>
         <a href="programs.html" class="nav-link hover:text-white transition-colors">Programs</a>
-        <a href="use_cases.html" class="nav-link hover:text-white transition-colors">Use Cases</a>
+        <a href="case_studies.html" class="nav-link hover:text-white transition-colors">Case Studies</a>
         
         <!-- Discover dropdown -->
         <div class="relative">
@@ -39,7 +39,7 @@ NAV_LINKS_HTML = """        <a href="index.html" class="nav-link hover:text-whit
 MOBILE_NAV_LINKS_HTML = """        <a href="index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
         <a href="about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
         <a href="programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
-        <a href="use_cases.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Use Cases</a>
+        <a href="case_studies.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Case Studies</a>
         <a href="index.html#blog" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
         <a href="index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
         
