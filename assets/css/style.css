@@ -386,3 +386,11 @@ textarea {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Accordion Summary Style Reset */
+summary::-webkit-details-marker {
+  display: none !important;
+}
+summary {
+  list-style: none !important;
+}
