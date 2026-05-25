@@ -260,6 +260,11 @@ textarea {
   transition: opacity .2s ease, transform .2s ease;
 }
 
+#discoverMenu .glass {
+  background: #150B24 !important;
+  backdrop-filter: none !important;
+}
+
 /* Mobile menu */
 #mobileMenu {
   transition: transform .35s cubic-bezier(.4, 0, .2, 1);
