@@ -27,7 +27,6 @@ NAV_LINKS_HTML = """        <a href="index.html" class="nav-link hover:text-whit
                 <a href="media_coverage.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Media Coverage</a>
                 <a href="our_platforms.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Platforms</a>
                 <a href="resources.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Resources</a>
-                <a href="index.html#events" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Events</a>
               </div>
             </div>
           </div>
@@ -58,7 +57,6 @@ MOBILE_NAV_LINKS_HTML = """        <a href="index.html" class="px-3 py-3 rounded
             <a href="media_coverage.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Media Coverage</a>
             <a href="our_platforms.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Platforms</a>
             <a href="resources.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Resources</a>
-            <a href="index.html#events" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Events</a>
           </div>
         </div>"""
 
