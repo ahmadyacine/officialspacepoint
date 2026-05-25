@@ -13,7 +13,7 @@ body {
   color: #fff;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
 }
 
 @media (max-width: 1023px) {
@@ -24,6 +24,7 @@ body {
 
 /* Custom Star Cursor */
 #customCursor {
+  display: none !important; /* Temporarily hidden */
   position: fixed;
   width: 24px;
   height: 24px;
@@ -52,7 +53,7 @@ button,
 input,
 select,
 textarea {
-  cursor: none;
+  /* cursor: none; */
 }
 
 @media (max-width: 1023px) {

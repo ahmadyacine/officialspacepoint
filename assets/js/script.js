@@ -7,10 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Custom Star Cursor ─────────────────────────────────── */
   const cursor = document.getElementById('customCursor');
   document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    // Commented out to use the default browser cursor
+    /*
+    if (cursor) {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    }
+    */
 
-    // Add sparkle trail
+    // Add sparkle trail (keep active for animation effect)
     for (let i = 0; i < 2; i++) {
       cursorSparkles.push({
         x: e.clientX,
@@ -25,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Commented out since we are using the default browser cursor
+  /*
   document.addEventListener('mouseover', e => {
     if (e.target.closest('a, button, [role="button"], input, select, textarea')) {
       document.body.classList.add('cursor-hover');
@@ -36,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('cursor-hover');
     }
   });
+  */
 
   /* ── Stars ──────────────────────────────────────────────── */
   const canvas = document.getElementById('starCanvas');
