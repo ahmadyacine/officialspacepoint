@@ -1,49 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<title>SpacePoint Shop | Ground Station Space Hardware & Kits</title>
-<meta content="Explore Ground Station, SpacePoint's official store for educational satellite kits, space hardware, and premium branded merchandise in the UAE." name="description"/>
-<meta name="keywords" content="SpacePoint shop, ground station, educational satellite kits, space hardware, CubeSat model, space merchandise UAE" />
-<link rel="canonical" href="https://spacepoint.ae/shop.html" />
-
-<!-- Open Graph / Social Media -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://spacepoint.ae/shop.html" />
-<meta property="og:title" content="SpacePoint Shop | Ground Station Space Hardware & Kits" />
-<meta property="og:description" content="Explore Ground Station, SpacePoint's official store for educational satellite kits, space hardware, and premium branded merchandise." />
-<meta property="og:image" content="https://spacepoint.ae/assets/img/SpacePoint%20logo.png" />
-
-<!-- Twitter / X -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://spacepoint.ae/shop.html" />
-<meta property="twitter:title" content="SpacePoint Shop | Ground Station Space Hardware & Kits" />
-<meta property="twitter:description" content="Explore Ground Station, SpacePoint's official store for educational satellite kits, space hardware, and premium branded merchandise." />
-<meta property="twitter:image" content="https://spacepoint.ae/assets/img/SpacePoint%20logo.png" />
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "SpacePoint Ground Station",
-  "description": "Official store for satellite kits, educational hardware, and branded merchandise by SpacePoint.",
-  "url": "https://spacepoint.ae/shop.html",
-  "image": "https://spacepoint.ae/assets/img/SpacePoint%20logo.png",
-  "parentOrganization": {
-    "@type": "EducationalOrganization",
-    "name": "SpacePoint",
-    "url": "https://spacepoint.ae"
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+  <title>{{ title }} | SpacePoint</title>
+  <meta content="{{ description }}" name="description" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -62,44 +28,62 @@
       }
     }
   </script>
-<link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <style>
+    .article-body strong, .article-body b {
+      font-weight: 700 !important;
+      color: #FFFFFF;
+    }
+    .article-body em, .article-body i {
+      font-style: italic !important;
+    }
+    .article-body a {
+      color: #A77DFF;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .article-body a:hover {
+      color: #FFFFFF;
+    }
+  </style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZSXTHGZW0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LZSXTHGZW0');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZSXTHGZW0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LZSXTHGZW0');
+  </script>
 </head>
-<body class="bg-space-dark">
-<!-- Star canvas -->
-<canvas id="starCanvas"></canvas>
-<div id="customCursor">
-<svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFFFFF"></path>
-</svg>
-</div>
-<!-- Nebula blobs -->
-<div class="nebula w-[300px] h-[300px] md:w-[600px] md:h-[600px] top-[-100px] left-[-50px] md:top-[-200px] md:left-[-100px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.35),transparent)"></div>
-<div class="nebula w-[250px] h-[250px] md:w-[500px] md:h-[500px] top-[30vh] right-[-50px] md:right-[-150px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(35,17,52,.7),transparent)"></div>
-<div class="nebula w-[200px] h-[200px] md:w-[400px] md:h-[400px] bottom-[10vh] left-[10vw] md:left-[20vw] opacity-30 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.2),transparent)"></div>
-<!-- ════════════════ NAVBAR ════════════════ -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar" style="background:rgba(5,3,10,.4);backdrop-filter:blur(8px);">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
-<!-- Logo -->
-<a class="flex items-center shrink-0" href="index.html">
-<img alt="SpacePoint" class="h-8 w-auto" onerror="this.style.display='none';document.getElementById('logoText').style.display='block'" src="assets/img/SpacePoint logo.png"/>
-<span class="hidden font-outfit font-bold text-xl text-white tracking-wide" id="logoText">Space<span class="text-space-accent">Point</span></span>
-</a>
-<!-- Desktop nav -->
+<body class="bg-space-dark overflow-x-hidden">
+  <!-- Star canvas -->
+  <canvas id="starCanvas"></canvas>
+  <div id="customCursor">
+    <svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+  
+  <!-- Nebula blobs -->
+  <div class="nebula w-[300px] h-[300px] md:w-[600px] md:h-[600px] top-[-100px] left-[-50px] md:top-[-200px] md:left-[-100px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.35),transparent)"></div>
+  <div class="nebula w-[250px] h-[250px] md:w-[500px] md:h-[500px] top-[30vh] right-[-50px] md:right-[-150px] opacity-40 md:opacity-100" style="background:radial-gradient(circle,rgba(35,17,52,.7),transparent)"></div>
+  <div class="nebula w-[200px] h-[200px] md:w-[400px] md:h-[400px] bottom-[10vh] left-[10vw] md:left-[20vw] opacity-30 md:opacity-100" style="background:radial-gradient(circle,rgba(101,63,132,.2),transparent)"></div>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar" style="background:rgba(5,3,10,.4);backdrop-filter:blur(8px);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
+      <!-- Logo -->
+      <a class="flex items-center shrink-0" href="/index.html">
+        <img alt="SpacePoint" class="h-8 w-auto" onerror="this.style.display='none';document.getElementById('logoText').style.display='block'" src="/assets/img/SpacePoint logo.png" />
+        <span class="hidden font-outfit font-bold text-xl text-white tracking-wide" id="logoText">Space<span class="text-space-accent">Point</span></span>
+      </a>
+      <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-7 font-inter text-sm font-medium text-space-light">
-        <a href="index.html" class="nav-link hover:text-white transition-colors">Home</a>
-        <a href="about.html" class="nav-link hover:text-white transition-colors">About</a>
-        <a href="programs.html" class="nav-link hover:text-white transition-colors">Programs</a>
-        <a href="case_studies.html" class="nav-link hover:text-white transition-colors">Case Studies</a>
+        <a href="/index.html" class="nav-link hover:text-white transition-colors">Home</a>
+        <a href="/about.html" class="nav-link hover:text-white transition-colors">About</a>
+        <a href="/programs.html" class="nav-link hover:text-white transition-colors">Programs</a>
+        <a href="/case_studies.html" class="nav-link hover:text-white transition-colors">Case Studies</a>
         
         <!-- Discover dropdown -->
         <div class="relative">
@@ -110,53 +94,54 @@
           <div id="discoverMenu" class="absolute top-8 left-1/2 -translate-x-1/2 w-[320px] opacity-0 pointer-events-none translate-y-2 z-50 transition-all duration-300">
             <div class="glass rounded-xl p-4 mt-2 border border-space-purple/20 shadow-2xl">
               <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-space-light">
-                <a href="journey.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Journey</a>
-                <a href="team.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Team</a>
-                <a href="alumni.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Alumni</a>
-                <a href="ambassadors.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Ambassadors</a>
-                <a href="shop.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Shop</a>
-                <a href="student_mission.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Student Missions</a>
-                <a href="media_coverage.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Media Coverage</a>
-                <a href="our_platforms.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Platforms</a>
-                <a href="resources.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Resources</a>
+                <a href="/journey.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Journey</a>
+                <a href="/team.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Team</a>
+                <a href="/alumni.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Alumni</a>
+                <a href="/ambassadors.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Ambassadors</a>
+                <a href="/shop.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Shop</a>
+                <a href="/student_mission.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Student Missions</a>
+                <a href="/media_coverage.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Media Coverage</a>
+                <a href="/our_platforms.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Our Platforms</a>
+                <a href="/resources.html" class="px-3 py-2 rounded-lg hover:bg-space-purple/30 hover:text-white transition-colors">Resources</a>
               </div>
             </div>
           </div>
         </div>
 
-        <a href="blog.html" class="nav-link hover:text-white transition-colors">Blog</a>
-        <a href="index.html#contact" class="nav-link hover:text-white transition-colors">Contact</a>
+        <a href="/blog.html" class="nav-link hover:text-white transition-colors">Blog</a>
+        <a href="/index.html#contact" class="nav-link hover:text-white transition-colors">Contact</a>
       </nav>
-<!-- CTA + mobile trigger -->
-<div class="flex items-center gap-4">
-<a class="hidden lg:inline-flex btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer"  href="book-workshop.html">
+      <!-- CTA + mobile trigger -->
+      <div class="flex items-center gap-4">
+        <a class="hidden lg:inline-flex btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer" href="/book-workshop.html">
           Launch a Program
         </a>
-<!-- Mobile burger -->
-<button aria-label="Open menu" class="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none" id="mobileMenuBtn">
-<span class="w-6 h-0.5 bg-white rounded"></span>
-<span class="w-4 h-0.5 bg-space-accent rounded"></span>
-<span class="w-6 h-0.5 bg-white rounded"></span>
-</button>
-</div>
-</div>
-</header>
-<!-- ════════════════ MOBILE MENU ════════════════ -->
+        <!-- Mobile burger -->
+        <button aria-label="Open menu" class="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none" id="mobileMenuBtn">
+          <span class="w-6 h-0.5 bg-white rounded"></span>
+          <span class="w-4 h-0.5 bg-space-accent rounded"></span>
+          <span class="w-6 h-0.5 bg-white rounded"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════ MOBILE MENU ════════════════ -->
   <div id="mobileMenu" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-500 lg:hidden flex flex-col" style="background: linear-gradient(160deg, #05030A 60%, #231134);">
     <div class="flex items-center justify-between h-16 px-6 border-b border-space-purple/20">
-      <img src="assets/img/SpacePoint logo.png" alt="SpacePoint" class="h-7 w-auto">
+      <img src="/assets/img/SpacePoint logo.png" alt="SpacePoint" class="h-7 w-auto">
       <button id="mobileMenuClose" class="p-2 text-white focus:outline-none" aria-label="Close menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </button>
     </div>
     <div class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
       <nav class="flex flex-col gap-1 font-outfit text-lg font-semibold">
-        <a href="index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
-        <a href="about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
-        <a href="programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
-        <a href="case_studies.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Case Studies</a>
-        <a href="blog.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
-        <a href="index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
+        <a href="/index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
+        <a href="/about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
+        <a href="/programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
+        <a href="/case_studies.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Case Studies</a>
+        <a href="/blog.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
+        <a href="/index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
         
         <div class="flex flex-col gap-2">
           <button id="mobileDiscoverBtn" class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white w-full text-left font-outfit text-lg font-semibold">
@@ -164,144 +149,110 @@
             <svg id="mobileDiscoverIcon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </button>
           <div id="mobileDiscoverList" class="hidden flex flex-col gap-1 pl-4 border-l border-space-purple/10">
-            <a href="journey.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Journey</a>
-            <a href="team.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Team</a>
-            <a href="alumni.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Alumni</a>
-            <a href="ambassadors.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Ambassadors</a>
-            <a href="shop.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Shop</a>
-            <a href="student_mission.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Student Missions</a>
-            <a href="media_coverage.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Media Coverage</a>
-            <a href="our_platforms.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Platforms</a>
-            <a href="resources.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Resources</a>
+            <a href="/journey.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Journey</a>
+            <a href="/team.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Team</a>
+            <a href="/alumni.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Alumni</a>
+            <a href="/ambassadors.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Ambassadors</a>
+            <a href="/shop.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Shop</a>
+            <a href="/student_mission.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Student Missions</a>
+            <a href="/media_coverage.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Media Coverage</a>
+            <a href="/our_platforms.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Our Platforms</a>
+            <a href="/resources.html" class="px-3 py-2 text-sm text-space-light hover:text-space-accent transition-colors rounded-lg">Resources</a>
           </div>
         </div>
       </nav>
       
       <div class="mt-auto pt-8">
-        <a href="book-workshop.html" class="btn-primary block text-center text-white font-semibold py-4 rounded-xl text-base">Launch a Program</a>
+        <a href="/book-workshop.html" class="btn-primary block text-center text-white font-semibold py-4 rounded-xl text-base">Launch a Program</a>
       </div>
     </div>
   </div>
 
-<!-- ════════════════ PAGE CONTENT ════════════════ -->
-<main id="main-content" class="relative z-10 pt-32 pb-24 bg-space-dark border-t border-space-purple/20 overflow-hidden" id="store">
-<!-- Background Elements -->
-<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-space-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-<!-- Header -->
-<div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-<div class="flex items-center justify-center gap-3 mb-4">
-<div class="w-6 h-0.5 bg-space-purple rounded"></div>
-<span class="text-space-accent text-sm font-semibold uppercase tracking-widest">Space. Shop Store.</span>
-<div class="w-6 h-0.5 bg-space-purple rounded"></div>
-</div>
-<h2 class="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
-          GROUND STATION
-        </h2>
-<p class="text-space-light text-lg leading-relaxed">
-          Ground Station is SpacePoint’s official store for satellite kits, educational hardware, and branded merchandise, the place where your space journey begins on Earth.
-        </p>
-</div>
-<!-- Products Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-<!-- Product 1 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.1s" data-title="Remove Before Launch Key Chain" data-desc="Classic flight-ready tag for your everyday keys." data-image="assets/img/Products photos/Keychain Front side.png" data-images="assets/img/Products photos/Keychain Front side.png,assets/img/Products photos/Kechain backside.png">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center">
-<img alt="Remove Before Launch Key Chain" class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/Keychain Front side.png"/>
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">Remove Before Launch Key Chain</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">Classic flight-ready tag for your everyday keys.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">AED</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-<!-- Product 2 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.2s" data-title="MiniSat Explorer" data-desc="A detailed miniature CubeSat model for your desk." data-image="assets/img/Products photos/MiniCubeSat.png">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center">
-<img alt="MiniSat Explorer" class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/MiniCubeSat.png"/>
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">MiniSat Explorer</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">A detailed miniature CubeSat model for your desk.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">AED</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-<!-- Product 3 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.3s" data-title="Zero Gravity Fit" data-desc="Premium SpacePoint merchandise T-Shirt." data-image="assets/img/Products photos/T-Shirt.png">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center">
-<img alt="Zero Gravity Fit" class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/T-Shirt.png"/>
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">Zero Gravity Fit</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">Premium SpacePoint merchandise T-Shirt.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">AED</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-<!-- Product 4 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.4s" data-title="MPKit - Train Like Space Engineer" data-desc="The complete educational hardware kit to begin your mission." data-image="assets/img/Products photos/MPKit First Side.png" data-images="assets/img/Products photos/MPKit First Side.png,assets/img/Products photos/MPKit Second Side.png">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center group">
-<img alt="MPKit - Train Like Space Engineer"
-  class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110"
-  loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/MPKit First Side.png" />
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">MPKit - Train Like Space Engineer</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">The complete educational hardware kit to begin your mission.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">550 $</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-<!-- Product 5 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.5s" data-title="SpacePoint Cap" data-desc="Official branded headwear." data-image="">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center group">
-<img alt="SpacePoint Cap"
-  class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110"
-  loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/Cap.png" />
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">SpacePoint Cap</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">Official branded headwear.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">AED</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-<!-- Product 6 -->
-<div class="glass border border-space-purple/20 rounded-3xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:border-space-accent/50 fade-in cursor-pointer product-card" style="transition-delay:.6s" data-title="Phone Metal Sticker" data-desc="Premium metallic decal for your devices." data-image="assets/img/Products photos/Mission Mark.png">
-<div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-space-purple-dark/30 flex items-center justify-center group">
-<img alt="Zero Gravity Fit"
-  class="w-full h-full object-contain p-4 drop-shadow-2xl transition-transform duration-500 hover:scale-110"
-  loading="lazy" onerror="this.style.display='none'" src="assets/img/Products photos/Mission Mark.png" />
-<div class="absolute top-4 right-4 bg-space-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg">Coming Soon</div>
-</div>
-<h3 class="font-outfit font-bold text-xl text-white mb-2">Phone Metal Sticker</h3>
-<p class="text-space-light/70 text-sm mb-6 flex-1">Premium metallic decal for your devices.</p>
-<div class="flex items-center justify-between">
-<span class="text-space-light font-medium font-outfit">AED</span>
-<button class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-space-purple hover:bg-space-accent transition-colors">Register</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- ════════════════ FOOTER & CONTACT ════════════════ -->
+  <!-- ════════════════ PAGE CONTENT ════════════════ -->
+  <main class="relative z-10 pt-32 pb-24 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      
+      <!-- Back Link -->
+      <div class="text-left mb-8">
+        <a href="/blog.html" class="inline-flex items-center gap-2 text-space-accent hover:text-white transition-colors text-sm font-semibold">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Knowledge Orbit
+        </a>
+      </div>
+
+      <!-- Article Header -->
+      <div class="text-center mb-10">
+        <span class="bg-space-purple/30 border border-space-purple/40 text-space-accent text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-block mb-4">
+          {{ category }}
+        </span>
+        <h1 class="font-outfit font-extrabold text-3xl sm:text-5xl text-white leading-tight mb-6 max-w-3xl mx-auto">
+          {{ title }}
+        </h1>
+        
+        <!-- Author Metadata -->
+        <div class="flex items-center justify-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-space-purple/30 flex items-center justify-center text-sm font-bold text-space-accent">{{ initials }}</div>
+          <div class="text-left">
+            <p class="text-white text-sm font-semibold">{{ author }}</p>
+            <p class="text-space-light/50 text-xs">{{ role }} • {{ date }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Image -->
+      <div class="relative w-full aspect-[21/9] rounded-3xl overflow-hidden mb-12 border border-space-purple/20 shadow-2xl">
+        <img src="{{ image_src }}" alt="{{ title }}" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-body font-inter max-w-3xl mx-auto text-left text-space-light/90 leading-relaxed font-light text-base md:text-lg space-y-6 mb-16">
+        {{ content }}
+      </div>
+
+      <!-- Comment Section -->
+      <div class="max-w-3xl mx-auto border-t border-space-purple/20 pt-16 text-left">
+        <h3 class="font-outfit font-extrabold text-2xl text-white mb-8">Comments</h3>
+
+        <!-- Disqus Comments Integration -->
+        <div class="glass border border-space-purple/20 bg-space-purple-dark/5 p-8 rounded-3xl">
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+              */
+              /*
+              var disqus_config = function () {
+                  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              // IMPORTANT: Replace 'spacepoint-ae' with your actual Disqus shortname
+              s.src = 'https://spacepoint-ae.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════════ FOOTER & CONTACT ════════════════ -->
   <footer class="relative z-10 bg-[#0B0510] pt-20 pb-8 border-t border-space-purple/20 overflow-hidden" id="contact">
-    <!-- Subtle background glow -->
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-64 bg-space-purple opacity-5 blur-[100px] pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <!-- Brand & About -->
         <div>
-          <a class="inline-block mb-6" href="index.html">
-            <img alt="SpacePoint Logo" class="h-10 w-auto" src="assets/img/SpacePoint logo.png"/>
+          <a class="inline-block mb-6" href="/index.html">
+            <img alt="SpacePoint Logo" class="h-10 w-auto" src="/assets/img/SpacePoint logo.png"/>
           </a>
           <p class="text-space-light text-sm leading-relaxed mb-6">
             Empowering the next generation of space explorers, innovators, and engineers through hands-on satellite education and mission experiences.
@@ -362,74 +313,8 @@
       </div>
     </div>
   </footer>
-<!-- ════════════════ FLOATING ROCKET ════════════════ -->
-<div class="fixed bottom-8 right-8 z-50 translate-y-24 opacity-0 transition-all duration-500 ease-out cursor-pointer group flex flex-col items-center justify-center w-12 h-12 rounded-full bg-space-dark/80 border border-space-purple/50 backdrop-blur-md shadow-[0_0_15px_rgba(167,125,255,0.3)] hover:shadow-[0_0_25px_rgba(167,125,255,0.6)] hover:border-space-accent pointer-events-none" id="rocketNav">
-<!-- Rocket Body -->
-<svg class="w-6 h-6 text-space-light group-hover:text-white transition-transform duration-300 relative z-10 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M12 2.25C8.85 4.5 7.5 9 7.5 13.5v2.25c0 1.5-1.5 2.25-1.5 2.25h12s-1.5-.75-1.5-2.25V13.5c0-4.5-1.35-9-4.5-11.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-<!-- Flame -->
-<div class="absolute bottom-2 w-2.5 h-3.5 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse origin-top" id="rocketFlame">
-</div>
-</div>
-<!-- ════════════════ PRODUCT POPUP ════════════════ -->
-<div class="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="productPopup">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-[#05030A]/80 backdrop-blur-sm" id="productOverlay"></div>
-  
-  <!-- Modal Content -->
-  <div class="relative glass border border-space-purple/40 rounded-3xl p-6 sm:p-10 max-w-2xl w-[95%] max-h-[90vh] overflow-y-auto transform scale-95 translate-y-8 transition-all duration-500 ease-out shadow-2xl flex flex-col md:flex-row gap-8" id="productModalContent">
-    <!-- Close Button -->
-    <button class="absolute top-4 right-4 p-2 text-space-light hover:text-white transition-colors focus:outline-none z-10" id="productCloseBtn">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-      </svg>
-    </button>
-    
-    <!-- Product Image -->
-    <div class="w-full md:w-1/2 flex flex-col items-center justify-center bg-space-purple-dark/30 rounded-2xl p-4">
-      <img id="popupProductImage" src="" alt="Product" class="w-full h-auto object-contain max-h-64 drop-shadow-2xl mb-4"/>
-      <!-- Image Thumbnails -->
-      <div id="popupProductThumbs" class="flex gap-2 w-full justify-center overflow-x-auto pb-2"></div>
-    </div>
-    
-    <!-- Product Details & Form -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center">
-      <div class="inline-block bg-space-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 w-max">Coming Soon</div>
-      <h3 id="popupProductTitle" class="font-outfit font-extrabold text-2xl sm:text-3xl text-white mb-2">Product Title</h3>
-      <p id="popupProductDesc" class="text-space-light/80 text-sm mb-6 leading-relaxed">Product description goes here.</p>
-      
-      <div class="border-t border-space-purple/30 pt-6 mt-2">
-        <h4 class="text-white font-semibold mb-2">Join the Waitlist</h4>
-        <p class="text-space-light/60 text-xs mb-4">Be the first to know when this becomes available.</p>
-        
-        <form id="productWaitlistForm" class="flex flex-col gap-3" action="https://docs.google.com/forms/d/e/1FAIpQLSft9H0Q1LBxqXM6TiQDiJU08Q1gOpZcCmhl46lGy_PZtNnbcw/formResponse" method="POST">
-          <input type="hidden" name="Product" id="popupProductInput" value="">
-          <input name="entry.984493605" class="w-full bg-space-dark/80 border border-space-purple/40 text-white px-4 py-2.5 rounded-xl focus:outline-none focus:border-space-accent transition-colors placeholder-space-light/50 text-sm" placeholder="Email Address" required="" type="email"/>
-          <input name="entry.1280915572" class="w-full bg-space-dark/80 border border-space-purple/40 text-white px-4 py-2.5 rounded-xl focus:outline-none focus:border-space-accent transition-colors placeholder-space-light/50 text-sm" placeholder="Phone Number" required="" type="tel"/>
-          <button class="btn-primary w-full text-white font-semibold px-4 py-3 rounded-xl text-sm flex items-center justify-center gap-2 mt-1" type="submit">
-            Register
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <!-- ════════════════ VIDEO POPUP ════════════════ -->
-  <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="videoPopup">
-    <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-sm" id="videoOverlay"></div>
-    <div class="relative w-full max-w-5xl px-4 sm:px-6 z-10 transform scale-95 transition-transform duration-500" id="videoModalContent">
-      <button class="absolute -top-12 right-4 sm:right-6 text-space-light hover:text-white transition-colors focus:outline-none" id="videoCloseBtn">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </button>
-      <div class="aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(167,125,255,0.2)] border border-space-purple/30">
-        <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-<!-- ════════════════ LEGAL MODALS ════════════════ -->
+  <!-- ════════════════ LEGAL MODALS ════════════════ -->
   <!-- Terms Modal -->
   <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="termsModal">
     <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="termsOverlay"></div>
@@ -622,7 +507,7 @@
     </div>
   </div>
 
-  <!-- Privacy Modal -->
+  <!-- Privacy Modal (Using same structure) -->
   <div class="fixed inset-0 z-[250] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="privacyModal">
     <div class="absolute inset-0 bg-[#05030A]/90 backdrop-blur-md" id="privacyOverlay"></div>
     <div class="relative glass border border-space-purple/40 rounded-3xl w-[95%] max-w-4xl max-h-[85vh] overflow-hidden transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col shadow-2xl" id="privacyContent">
@@ -802,42 +687,7 @@
     </div>
   </div>
 
-<!-- ════════════════ NEWSLETTER POPUP ════════════════ -->
-<div class="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-500" id="newsletterPopup">
-<!-- Overlay -->
-<div class="absolute inset-0 bg-[#05030A]/80 backdrop-blur-sm" id="newsletterOverlay"></div>
-<!-- Modal Content -->
-<div class="relative glass border border-space-purple/40 rounded-3xl p-8 sm:p-12 max-w-lg w-[90%] transform scale-95 translate-y-8 transition-all duration-500 ease-out flex flex-col items-center text-center shadow-2xl" id="newsletterModal">
-<!-- Close Button -->
-<button class="absolute top-4 right-4 p-2 text-space-light hover:text-white transition-colors focus:outline-none" id="newsletterClose">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<!-- Icon -->
-<div class="w-16 h-16 rounded-full bg-space-purple/20 border border-space-purple/40 flex items-center justify-center text-space-accent mb-6 shadow-[0_0_15px_rgba(167,125,255,0.3)]">
-<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-</div>
-<h3 class="font-outfit font-extrabold text-2xl sm:text-3xl text-white mb-3">Join the Mission</h3>
-<p class="text-space-light text-sm sm:text-base mb-8 leading-relaxed">
-        Subscribe to our newsletter to get the latest updates on our next space events, satellite workshops, and
-        exclusive explorer resources.
-      </p>
-      <form id="newsletterForm" class="flex flex-col w-full gap-4" action="https://docs.google.com/forms/d/e/1FAIpQLSdKr8KwlG9mPPj29M3podWH7IRXE_fEpv0K59i9FxTlplOz0A/formResponse" method="POST">
-        <input name="entry.1600678404" class="w-full bg-space-dark/80 border border-space-purple/40 text-white px-5 py-3.5 rounded-xl focus:outline-none focus:border-space-accent transition-colors placeholder-space-light/50 text-center sm:text-left" placeholder="Enter your email address" required="" type="email"/>
-        <button class="btn-primary w-full text-white font-semibold px-6 py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 group" type="submit">
-          Subscribe Now
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg>
-        </button>
-      </form>
-<p class="text-space-light/40 text-xs mt-6">We respect your privacy. No spam, just space.</p>
-</div>
-</div>
-<script>
+  <script>
     window.intercomSettings = {
       api_base: "https://api-iam.intercom.io",
       app_id: "hsw1zj8e",
@@ -851,6 +701,16 @@
 <script>
     (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/hsw1zj8e';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
   </script>
-<script src="assets/js/script.js"></script>
+
+  <!-- ════════════════ FLOATING ROCKET ════════════════ -->
+  <div class="fixed bottom-8 right-8 z-50 translate-y-24 opacity-0 transition-all duration-500 ease-out cursor-pointer group flex flex-col items-center justify-center w-12 h-12 rounded-full bg-space-dark/80 border border-space-purple/50 backdrop-blur-md shadow-[0_0_15px_rgba(167,125,255,0.3)] hover:shadow-[0_0_25px_rgba(167,125,255,0.6)] hover:border-space-accent pointer-events-none" id="rocketNav">
+    <svg class="w-6 h-6 text-space-light group-hover:text-white transition-transform duration-300 relative z-10 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+      <path d="M12 2.25C8.85 4.5 7.5 9 7.5 13.5v2.25c0 1.5-1.5 2.25-1.5 2.25h12s-1.5-.75-1.5-2.25V13.5c0-4.5-1.35-9-4.5-11.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+    </svg>
+    <div class="absolute bottom-2 w-2.5 h-3.5 bg-gradient-to-t from-orange-500 to-yellow-300 rounded-full blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse origin-top" id="rocketFlame"></div>
+  </div>
+
+
+  <script src="/assets/js/script.js"></script>
 </body>
 </html>

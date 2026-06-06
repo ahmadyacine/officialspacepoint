@@ -32,14 +32,14 @@ NAV_LINKS_HTML = """        <a href="index.html" class="nav-link hover:text-whit
           </div>
         </div>
 
-        <a href="index.html#blog" class="nav-link hover:text-white transition-colors">Blog</a>
+        <a href="blog.html" class="nav-link hover:text-white transition-colors">Blog</a>
         <a href="index.html#contact" class="nav-link hover:text-white transition-colors">Contact</a>"""
 
 MOBILE_NAV_LINKS_HTML = """        <a href="index.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Home</a>
         <a href="about.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">About</a>
         <a href="programs.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Programs</a>
         <a href="case_studies.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Case Studies</a>
-        <a href="index.html#blog" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
+        <a href="blog.html" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Blog</a>
         <a href="index.html#contact" class="px-3 py-3 rounded-xl hover:bg-space-purple/20 transition-colors text-space-light hover:text-white">Contact</a>
         
         <div class="flex flex-col gap-2">

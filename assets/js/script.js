@@ -167,10 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Navbar scroll glass ─────────────────────────────────── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('nav-scrolled');
-    } else {
-      navbar.classList.remove('nav-scrolled');
+    if (navbar) {
+      if (window.scrollY > 40) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
     }
   });
 
@@ -632,5 +634,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('privacyClose')?.addEventListener('click', () => closeModal(privacyModal));
   document.getElementById('privacyAccept')?.addEventListener('click', () => closeModal(privacyModal));
   document.getElementById('privacyOverlay')?.addEventListener('click', () => closeModal(privacyModal));
+
+  // Research Modal Triggers
+  const researchModal = document.getElementById('researchModal');
+  const openResearchBtn = document.getElementById('openResearchBtn');
+  openResearchBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal(researchModal);
+  });
+  document.getElementById('researchClose')?.addEventListener('click', () => closeModal(researchModal));
+  document.getElementById('researchOverlay')?.addEventListener('click', () => closeModal(researchModal));
+
+  handleFormSubmit('researchForm');
 
 });

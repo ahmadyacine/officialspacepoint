@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Admin Login | SpacePoint</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'space-dark': '#05030A',
+            'space-purple-dark': '#231134',
+            'space-purple': '#653F84',
+            'space-light': '#D7D2CB',
+            'space-accent': '#A77DFF',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <style>
+    body { background-color: #05030A; color: white; }
+    .glass { background: rgba(35, 17, 52, 0.25); backdrop-filter: blur(16px); }
+    .gradient-border {
+      position: relative;
+    }
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1.5rem;
+      padding: 1px;
+      background: linear-gradient(to right, rgba(167, 125, 255, 0.4), rgba(101, 63, 132, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-space-dark font-inter relative overflow-hidden">
+  <!-- Star canvas -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Nebula blobs -->
+  <div class="nebula w-[300px] h-[300px] md:w-[600px] md:h-[600px] top-[-100px] left-[-50px] md:top-[-200px] md:left-[-100px] opacity-40 md:opacity-80"
+    style="background:radial-gradient(circle,rgba(101,63,132,.35),transparent)"></div>
+  <div class="nebula w-[250px] h-[250px] md:w-[500px] md:h-[500px] bottom-[-50px] right-[-50px] md:right-[-150px] opacity-40 md:opacity-80"
+    style="background:radial-gradient(circle,rgba(35,17,52,.6),transparent)"></div>
+
+  <div class="glass gradient-border rounded-3xl p-8 max-w-md w-[90%] shadow-[0_0_50px_rgba(167,125,255,0.15)] relative z-10">
+    <div class="flex flex-col items-center justify-center mb-8">
+      <!-- Logo image -->
+      <img src="/assets/img/SpacePoint logo.png" alt="SpacePoint" class="h-10 w-auto mb-3" onerror="this.style.display='none';document.getElementById('logoText').style.display='block'" />
+      <span class="hidden font-outfit font-bold text-2xl text-white tracking-wide mb-1" id="logoText">Space<span class="text-space-accent">Point</span></span>
+      <p class="text-space-light/60 text-[10px] uppercase tracking-[0.2em] font-semibold font-outfit">Mission Control</p>
+    </div>
+    
+    {% if error %}
+    <div class="bg-red-500/10 border border-red-500/30 text-red-300 text-xs p-3.5 rounded-xl mb-6 text-center">
+      {{ error }}
+    </div>
+    {% endif %}
+
+    <form method="POST" action="/login" class="space-y-5">
+      <div>
+        <label class="block text-[10px] font-semibold text-space-light/70 uppercase tracking-widest mb-2 font-outfit">Username</label>
+        <input type="text" name="username" required placeholder="admin" class="w-full bg-[#0B0510]/80 border border-space-purple/30 text-white px-5 py-3 rounded-xl focus:outline-none focus:border-space-accent transition-all duration-300 placeholder-space-light/20 text-sm" />
+      </div>
+      <div>
+        <label class="block text-[10px] font-semibold text-space-light/70 uppercase tracking-widest mb-2 font-outfit">Password</label>
+        <input type="password" name="password" required placeholder="••••••••" class="w-full bg-[#0B0510]/80 border border-space-purple/30 text-white px-5 py-3 rounded-xl focus:outline-none focus:border-space-accent transition-all duration-300 placeholder-space-light/20 text-sm" />
+      </div>
+      
+      <button type="submit" class="w-full bg-space-purple hover:bg-space-accent text-white font-semibold font-outfit py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(101,63,132,0.3)] hover:shadow-[0_0_25px_rgba(167,125,255,0.4)] mt-4">
+        Authenticate
+      </button>
+    </form>
+  </div>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
