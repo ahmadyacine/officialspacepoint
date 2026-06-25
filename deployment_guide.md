@@ -38,13 +38,13 @@ Navigate to `/var/www/` (common directory for web serving) and clone your reposi
 ```bash
 cd /var/www
 # Replace with your actual repository URL or upload files directly
-sudo git clone https://github.com/your-username/SpacePoint-LandingPage.git spacepoint
+sudo git clone https://github.com/your-username/SpacePoint-LandingPage.git officialspacepoint
 ```
 
-Change directory ownership to your login user (replace `ubuntu` with your username if different):
+Change directory ownership to your login user (replace `ubuntu` with your username or `root:www-data` depending on setup):
 ```bash
-sudo chown -R ubuntu:ubuntu /var/www/spacepoint
-cd /var/www/spacepoint
+sudo chown -R ubuntu:ubuntu /var/www/officialspacepoint
+cd /var/www/officialspacepoint
 ```
 
 Ensure the `/articles` folder exists and has proper write permissions (since the backend generates files here):
@@ -66,7 +66,7 @@ source venv/bin/activate
 Install required backend packages:
 ```bash
 pip install --upgrade pip
-pip install fastapi uvicorn jinja2 requests
+pip install fastapi uvicorn jinja2 requests python-multipart
 ```
 
 Deactivate the virtual environment for now:
@@ -80,40 +80,41 @@ deactivate
 To keep the FastAPI server running persistently in the background and survive server reboots, create a systemd service file:
 
 ```bash
-sudo nano /etc/systemd/system/spacepoint.service
+sudo nano /etc/systemd/system/officialspacepoint.service
 ```
 
-Paste the following configuration into the editor:
+Paste the following configuration into the editor (running on port `8004` to avoid conflicts):
 ```ini
 [Unit]
-Description=SpacePoint FastAPI Admin Server
+Description=Official SpacePoint FastAPI Admin Backend
 After=network.target
 
 [Service]
-User=ubuntu
-WorkingDirectory=/var/www/spacepoint
-ExecStart=/var/www/spacepoint/venv/bin/python admin_backend/main.py
+User=root
+Group=www-data
+WorkingDirectory=/var/www/officialspacepoint
+ExecStart=/var/www/officialspacepoint/venv/bin/uvicorn admin_backend.main:app --host 127.0.0.1 --port 8004
 Restart=always
 RestartSec=5
-Environment="PATH=/var/www/spacepoint/venv/bin"
+Environment="PATH=/var/www/officialspacepoint/venv/bin"
 
 [Install]
 WantedBy=multi-user.target
 ```
-*Note: Make sure `User=ubuntu` matches the owner of `/var/www/spacepoint`.*
+*Note: Ensure `User=root` and `Group=www-data` or your appropriate server user has read/write permissions to `/var/www/officialspacepoint`.*
 
 Save and close the file (`Ctrl + O`, then `Enter`, then `Ctrl + X`).
 
 Start the service and enable it to run on boot:
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl start spacepoint
-sudo systemctl enable spacepoint
+sudo systemctl start officialspacepoint
+sudo systemctl enable officialspacepoint
 ```
 
 Check the status of the service to verify it is running:
 ```bash
-sudo systemctl status spacepoint
+sudo systemctl status officialspacepoint
 ```
 
 ---
@@ -121,26 +122,26 @@ sudo systemctl status spacepoint
 ### Step 5: Configure Nginx Reverse Proxy
 Create a new Nginx configuration file for your domain:
 ```bash
-sudo nano /etc/nginx/sites-available/spacepoint
+sudo nano /etc/nginx/sites-available/spacepoint.ae
 ```
 
-Paste the following block (replace `spacepoint.ae` and `admin.spacepoint.ae` with your actual domain/subdomain):
+Paste the following block (pointing to the admin backend on port `8004` to avoid port conflict):
 ```nginx
 server {
     listen 80;
-    server_name spacepoint.ae admin.spacepoint.ae; # Add your domains here
+    server_name spacepoint.ae www.spacepoint.ae; # Add your domains here
 
     client_max_body_size 20M; # Allow image uploads up to 20MB
 
     location / {
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8004;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
         proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded-for;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
@@ -150,7 +151,7 @@ Save and exit.
 
 Enable the configuration by creating a symlink:
 ```bash
-sudo ln -s /etc/nginx/sites-available/spacepoint /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/spacepoint.ae /etc/nginx/sites-enabled/
 ```
 
 Remove the default Nginx page (optional but recommended to avoid conflicts):
@@ -191,13 +192,13 @@ Certbot will automatically update your Nginx configuration with the SSL certific
 ### View Application Logs (Systemd)
 To inspect the live FastAPI logs and database outputs:
 ```bash
-sudo journalctl -u spacepoint -f
+sudo journalctl -u officialspacepoint -f
 ```
 
 ### Restart Application Server
 If you push changes or manually update files:
 ```bash
-sudo systemctl restart spacepoint
+sudo systemctl restart officialspacepoint
 ```
 
 ### Check Nginx Access/Error Logs
